@@ -20,7 +20,7 @@ def main(unused_argv):
   elif ext.lower() == '.txt':
     loader = TextLoader(join(root, FLAGS.input))
   elif ext.lower() == '.pdf':
-    loader = UnstructuredPDFLoader(FLAGS.input, mode = 'single', strategy = "hi_res")
+    loader = UnstructuredPDFLoader(FLAGS.input, mode = 'single')
   else:
     raise Exception('unknown format!')
   text = ''.join([doc.page_content for doc in loader.load()])
