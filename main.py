@@ -16,11 +16,11 @@ def add_options():
 def main(unused_argv):
   stem, ext = splitext(FLAGS.input)
   if ext.lower() in ['.htm', '.html']:
-    loader = UnstructuredHTMLLoader(join(root, f))
+    loader = UnstructuredHTMLLoader(join(root, FLAGS.input))
   elif ext.lower() == '.txt':
-    loader = TextLoader(join(root, f))
+    loader = TextLoader(join(root, FLAGS.input))
   elif ext.lower() == '.pdf':
-    loader = UnstructuredPDFLoader(join(root, f), mode = 'single', strategy = "hi_res")
+    loader = UnstructuredPDFLoader(FLAGS.input, mode = 'single', strategy = "hi_res")
   else:
     raise Exception('unknown format!')
   text = ''.join([doc.page_content for doc in loader.load()])
