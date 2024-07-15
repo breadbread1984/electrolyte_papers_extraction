@@ -14,7 +14,7 @@ def add_options():
   flags.DEFINE_boolean('locally', default = False, help = 'whether run LLM locally')
 
 def main(unused_argv):
-  stem, ext = splitext(f)
+  stem, ext = splitext(FLAGS.input)
   if ext.lower() in ['.htm', '.html']:
     loader = UnstructuredHTMLLoader(join(root, f))
   elif ext.lower() == '.txt':
