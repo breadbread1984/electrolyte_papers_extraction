@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from absl import flags, app
-from os.path import splitext
+from os.path import splitext, join
 from langchain.document_loaders import UnstructuredPDFLoader, UnstructuredHTMLLoader, TextLoader
 from models import Mamba
 from chains import stuff_chain
