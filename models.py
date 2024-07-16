@@ -23,8 +23,7 @@ class Mamba(LLM):
     input_ids = self.tokenizer(prompt, return_tensors = "pt")['input_ids']
     input_ids = input_ids.to(self.model.device)
     out = self.model.generate(input_ids, do_sample = False, temperature = 0.8, top_p = 0.8, max_new_tokens = 2048)
-    out = out[len(input_ids):]
-    out = self.tokenizer.batch_decode(out)[0]
+    out = self.tokenizer.batch_decode(out)[0][len(prompt):]
     return out
   @property
   def _llm_type(self):
