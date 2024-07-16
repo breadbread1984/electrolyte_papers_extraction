@@ -22,7 +22,7 @@ class Mamba(LLM):
   def _call(self, prompt, stop = None, run_manager = None, **kwargs):
     input_ids = self.tokenizer(prompt, return_tensors = "pt")['input_ids']
     input_ids = input_ids.to(self.model.device)
-    out = self.model.generate(input_ids, do_sample = False, temperature = 0.8, top_p = 0.8)
+    out = self.model.generate(input_ids, do_sample = False, temperature = 0.8, top_p = 0.8, max_new_tokens = 2048)
     out = out[len(input_ids):]
     return out
   @property
