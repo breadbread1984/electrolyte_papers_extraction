@@ -25,4 +25,7 @@ class Mamba(LLM):
     out = model.generate(input_ids, do_sample = False, temperature = 0.8, top_p = 0.8)
     out = out[len(input_ids):]
     return out
+  @property
+  def _llm_type(self):
+    return "mamba-2.8b-hf"
 
