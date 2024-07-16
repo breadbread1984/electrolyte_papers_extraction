@@ -11,7 +11,7 @@ FLAGS = flags.FLAGS
 def add_options():
   flags.DEFINE_string('input', default = None, help = 'path to input paper')
   flags.DEFINE_string('output', default = 'output.txt', help = 'path to output')
-  flags.DEFINE_boolean('locally', default = False, help = 'whether run LLM locally')
+  flags.DEFINE_enum('device', default = 'cuda', enum_values = {'cpu', 'cuda'}, help = 'device to use')
 
 def main(unused_argv):
   stem, ext = splitext(FLAGS.input)
@@ -24,7 +24,8 @@ def main(unused_argv):
   else:
     raise Exception('unknown format!')
   text = ''.join([doc.page_content for doc in loader.load()])
-  tokenizer, llm = Mamba(FLAGS.locally)
+  llm = Mamba(FLAGS.device)
+  tokenizer = llm.tokenizer
   stuff_chain_ = stuff_chain(tokenizer, llm)
   conductivity = stuff_chain_.invoke({'context': text, 'question': 'what is the ionic conductivity of the electrolyte introduced in the paper?'})
   window = stuff_chain_.invoke({'context': text, 'question': 'what is the electronchemical stability window of the electrolyte introduced in the paper?'})
