@@ -3,7 +3,7 @@
 from os import environ
 from torch import device
 from huggingface_hub import login
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from langchain.llms.base import LLM
 from langchain_community.llms import HuggingFaceEndpoint
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
