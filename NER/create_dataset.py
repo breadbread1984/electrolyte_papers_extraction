@@ -26,7 +26,7 @@ def main(unused_argv):
   for sample in annotations:
     text = sample[0]
     entities = sample[1]['entities']
-    tokens = tokenizer.backend_tokenizer.pre_tokenizer.pretokenize_str(text)
+    tokens = tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(text)
     ner_tags = ['O' for token in tokens]
     for e in entities:
       begin = e[0]
