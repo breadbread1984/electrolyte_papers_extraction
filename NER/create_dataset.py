@@ -20,7 +20,7 @@ def main(unused_argv):
   model_name = {'bert': 'google-bert/bert-base-cased'}[FLAGS.model]
   tokenizer = AutoTokenizer.from_pretrained(model_name)
   samples = list()
-  with open(FLAGS.input, 'r') as fp
+  with open(FLAGS.input, 'r') as fp:
     spacy_labels = json.loads(fp.read())
   token_tags = spacy_labels['classes'] # list
   annotations = spacy_labels['annotations'] # list
