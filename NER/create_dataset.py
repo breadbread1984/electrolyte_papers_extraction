@@ -43,7 +43,7 @@ def main(unused_argv):
     samples.append({'text': [token[0] for token in tokens], 'labels': ner_tags})
   with open(FLAGS.output, 'w') as f:
     for sample in samples:
-      f.write(json.dumps(sample, ensure_ascii = False, indent = 2) + '\n')
+      f.write(json.dumps(sample, ensure_ascii = False) + '\n')
 
 if __name__ == "__main__":
   add_options()
