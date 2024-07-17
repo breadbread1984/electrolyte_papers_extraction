@@ -7,7 +7,6 @@ from os.path import join, exists, splitext
 from absl import flags, app
 import numpy as np
 from transformers import AutoTokenizer
-from datasets import load_dataset
 
 FLAGS = flags.FLAGS
 
