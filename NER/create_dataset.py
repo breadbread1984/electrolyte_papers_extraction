@@ -24,6 +24,7 @@ def main(unused_argv):
   token_tags = spacy_labels['classes'] # list
   annotations = spacy_labels['annotations'] # list
   for sample in annotations:
+    if sample is None: continue
     text = sample[0]
     entities = sample[1]['entities']
     tokens = tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(text)
