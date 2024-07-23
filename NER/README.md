@@ -14,7 +14,7 @@ sudo apt install yarnpkg
 ## Preprocess documents for annotation
 
 ```shell
-python3 preprocess.py --input_dir <path/to/pdf> [--output_dir <path/to/preprocessed/docs>] [--length=<sentence/length>]
+python3 preprocess.py --input_dir <path/to/pdf> [--output_dir <path/to/preprocessed/docs>] [--length <sentence/length>]
 ```
 
 ## Annotation for SpaCy
