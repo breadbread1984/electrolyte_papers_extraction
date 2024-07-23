@@ -4,3 +4,7 @@ torch
 transformers
 modelscope
 adaseq
+langchain
+langchain-openai
+langchain-community
+langchain-experimental
