@@ -15,7 +15,7 @@ sudo apt install yarnpkg
 
 - copy and paste the sentences you want to annotate to a file one at a line.
 - download annotator at [this repo](https://github.com/tecoholic/ner-annotator).
-- run yarn && yarn serve and visit http://localhost:8081/ner-annotator/
+- run yarnpkg && yarnpkg serve and visit http://localhost:8081/ner-annotator/
 - open the file you prepared and finish annotation
 - save the annotation to a json file
 
