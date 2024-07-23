@@ -28,7 +28,7 @@ python3 preprocess.py --input_dir <path/to/pdf> [--output_dir <path/to/preproces
 ## Convert annotation for SpaCy to that of AdaSeq
 
 ```shell
-python3 create_dataset.py --input <path/to/spacy/annotation/file> --output <path/to/adaseq/annotation/file>
+bash convert.sh <path/to/spacy/annotation/file> <path/to/adaseq/annotation/file>
 ```
 
 ## Train Bert+CRF model
