@@ -14,10 +14,12 @@ FLAGS = flags.FLAGS
 def add_options():
   flags.DEFINE_string('input_dir', default = None, help = 'path to input directory')
   flags.DEFINE_string('output_dir', default = 'output', help = 'path to output directory')
+  flags.DEFINE_integer('length', default = 200, help = 'sample sentence length')
 
 def main(unused_argv):
   if exists(FLAGS.output_dir): rmtree(FLAGS.output_dir)
   mkdir(FLAGS.output_dir)
+  text_splitter = RecursiveCharacterTextSplitter(chunk_size = FLAGS.length, chunk_overlap = 0)
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
       stem, ext = splitext(f)
