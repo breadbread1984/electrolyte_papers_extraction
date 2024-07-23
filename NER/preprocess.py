@@ -14,7 +14,7 @@ FLAGS = flags.FLAGS
 def add_options():
   flags.DEFINE_string('input_dir', default = None, help = 'path to input directory')
   flags.DEFINE_string('output_dir', default = 'output', help = 'path to output directory')
-  flags.DEFINE_integer('length', default = 200, help = 'sample sentence length')
+  flags.DEFINE_integer('length', default = 500, help = 'sample sentence length')
 
 def main(unused_argv):
   if exists(FLAGS.output_dir): rmtree(FLAGS.output_dir)
@@ -34,7 +34,7 @@ def main(unused_argv):
       docs = loader.load()
       split_docs = text_splitter.split_documents(docs)
       with open(join(FLAGS.output_dir, str(uuid4())), 'w') as f:
-        for doc in split_docs:
+        for doc in split_docs if len(doc.page_content) > 100:
           content = doc.page_content.replace('\n','')
           f.write(content + '\n')
 
