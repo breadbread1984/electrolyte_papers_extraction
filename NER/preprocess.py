@@ -33,7 +33,7 @@ def main(unused_argv):
         raise Exception('unknown format!')
       docs = loader.load()
       split_docs = text_splitter.split_documents(docs)
-      with open(join(FLAGS.output_dir, str(uuid4())), 'w') as f:
+      with open(join(FLAGS.output_dir, str(uuid4()) + '.txt'), 'w') as f:
         for doc in split_docs if len(doc.page_content) > 100:
           content = doc.page_content.replace('\n','')
           f.write(content + '\n')
