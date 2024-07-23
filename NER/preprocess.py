@@ -35,8 +35,8 @@ def main(unused_argv):
       split_docs = text_splitter.split_documents(docs)
       with open(str(uuid4()), 'w') as f:
         for doc in split_docs:
-          doc.replace('\n','')
-          f.write(doc + '\n')
+          content = doc.page_content.replace('\n','')
+          f.write(content + '\n')
 
 if __name__ == "__main__":
   add_options()
