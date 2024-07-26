@@ -35,6 +35,7 @@ def main(unused_argv):
     if type(authors) is not str or authors.strip() == '': continue
     author_info = dict()
     for author in authors.split(';'):
+      if author.strip() == '': continue
       name_id = author.strip().split('/')
       author, researcher_id = name_id[0], name_id[1]
       author_info[author] = researcher_id
