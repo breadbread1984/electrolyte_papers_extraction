@@ -30,7 +30,7 @@ def main(unused_argv):
   sheet = xls.parse(0)
   columns = sheet.columns
   output = open(FLAGS.output, 'w')
-  for i in range sheet.index:
+  for i in sheet.index:
     authors = sheet.iloc[i]['Researcher Ids']
     if authors.strip() == '': continue
     authors = dict()
