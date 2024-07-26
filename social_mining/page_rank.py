@@ -24,10 +24,10 @@ def main(unused_argv):
     for idx2, (id2, name2) in enumerate(authors.items()):
       if id1 == id2: continue
       records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
-      papers = [records['paper'] for record in records]
+      papers = [record['paper'] for record in records]
       weight = np.sum([record.cited for record in records])
       weights[idx1, idx2] = weight
-      import pdb; pdb.set_trace()
+  np.save('weights.npy', weights)
 
 if __name__ == "__main__":
   add_options()
