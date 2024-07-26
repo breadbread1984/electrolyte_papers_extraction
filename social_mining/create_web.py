@@ -32,7 +32,7 @@ def main(unused_argv):
   output = open(FLAGS.output, 'w')
   for i in sheet.index:
     authors = sheet.iloc[i]['Researcher Ids']
-    if authors.strip() == '': continue
+    if type(authors) is not str or authors.strip() == '': continue
     author_info = dict()
     for author in authors.split(';'):
       author, researcher_id = author.strip().split('/')
