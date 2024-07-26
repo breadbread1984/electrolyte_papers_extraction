@@ -67,7 +67,9 @@ def main(unused_argv):
     with open('tmp.bib','w') as f:
       f.write(output)
     bib_data = parse_file('tmp.bib')
-    import pdb; pdb.set_trace()
+    for k, v in bib_data.entries.items():
+      if len(v.persons) == 0: continue
+      authors = v.persons['author']
 
 if __name__ == "__main__":
   add_options()
