@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 from absl import flags, app
-from pybtex.database.input import bibtex
+from os.path import join, exists
+from pybtex.database import parse_file
 import pandas as pd
+import subprocess
 
 FLAGS = flags.FLAGS
 
@@ -31,7 +33,8 @@ merge (a)-[:CONTRIBUTES_TO]->(b);
 def main(unused_argv):
   xls = pd.ExcelFile(FLAGS.list)
   sheet = xls.parse(0)
-  columns = sheet.columns
+  # 1) add author, paper nodes
+  # add author-paper relationship
   output = open(FLAGS.output, 'w')
   for i in sheet.index:
     authors = sheet.iloc[i]['Researcher Ids']
@@ -54,6 +57,16 @@ def main(unused_argv):
     for author, research_id in author_info.items():
       output.write(add_paper_author(doi, researcher_id))
   output.close()
+  # 2) add author citation relationship
+  for i in sheet.index:
+    idx = sheet.iloc[i]['序号']
+    title = sheet.iloc[i]['Article Title']
+    pdf_path = join(FLAGS.pdf_dir, idx + '-' + title + '.pdf')
+    if not exists(path_path): continue
+    output = subprocess.check_output('anystyle -f bib find %s' % pdf_path, shell = True, text = True)
+    with open('tmp.bib','w') as f:
+      f.write(output)
+    bib_data = parse_file('tmp.bib')
 
 if __name__ == "__main__":
   add_options()
