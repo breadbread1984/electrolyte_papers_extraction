@@ -18,12 +18,12 @@ def main(unused_argv):
   matches = [record['author'] for record in records]
   authors = dict()
   for match in matches:
-    authors[match.id] = match._properties['name']
+    authors[match.element_id] = match._properties['name']
   weights = np.zeros((len(authors), len(authors)))
   for idx1, (id1, name1) in enumerate(authors.items()):
     for idx2, (id2, name2) in enumerate(authors.items()):
       if id1 == id2: continue
-      records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where id(a) = $id1 and id(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
+      records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
       papers = [records['paper'] for record in records]
       weight = np.sum([record.cited for record in records])
       weights[idx1, idx2] = weight
