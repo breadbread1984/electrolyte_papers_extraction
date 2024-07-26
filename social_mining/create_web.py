@@ -39,9 +39,11 @@ def main(unused_argv):
       author_info[author] = researcher_id
       # add author
       output.write(add_author(author, researcher_id))
-    doi = sheet.iloc[i]['DOI'].strip()
-    title = sheet.iloc[i]['Article Title'].strip()
-    if doi == '' or title == '': continue
+    doi = sheet.iloc[i]['DOI']
+    title = sheet.iloc[i]['Article Title']
+    if type(doi) is not str or doi == '' or \
+       type(title) is not str or title == '': continue
+    doi, title = doi.strip(), title.strip()
     # add paper
     output.write(add_paper(title, doi))
     for author, research_id in author_info.items():
