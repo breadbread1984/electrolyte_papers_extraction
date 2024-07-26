@@ -14,7 +14,10 @@ def add_options():
 def main(unused_argv):
   driver = GraphDatabase.driver(FLAGS.host, auth = (FLAGS.user, FLAGS.password))
   records, summary, keys = driver.execute_query('match (a: Author) return a as author', database_ = FLAGS.db)
-  matched = [record['author'] for record in records]
+  matches = [record['author'] for record in records]
+  authors = dict()
+  for match in matches:
+    authors[match.element_id] = match._properties['name']
 
 if __name__ == "__main__":
   add_options()
