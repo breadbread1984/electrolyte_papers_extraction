@@ -62,7 +62,7 @@ def main(unused_argv):
     idx = sheet.iloc[i]['序号']
     title = sheet.iloc[i]['Article Title']
     pdf_path = join(FLAGS.paper_dir, f"{idx}-{title}.pdf")
-    if not exists(path_path): continue
+    if not exists(pdf_path): continue
     output = subprocess.check_output('anystyle -f bib find %s' % pdf_path, shell = True, text = True)
     with open('tmp.bib','w') as f:
       f.write(output)
