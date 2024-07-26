@@ -51,14 +51,14 @@ def main(unused_argv):
     title = sheet.iloc[i]['Article Title']
     cited = sheet.iloc[i]['Times Cited, All Databases']
     if type(doi) is not str or doi == '' or \
-       type(title) is not str or title == '' or \
-       type(cited) is not int or cited == '': continue
+       type(title) is not str or title == '': continue
     doi, title = doi.strip(), title.strip()
     # add paper
     output.write(add_paper(title, doi, cited))
     for author, research_id in author_info.items():
       output.write(add_paper_author(doi, researcher_id))
   output.close()
+  '''
   # 2) add author citation relationship
   for i in sheet.index:
     idx = sheet.iloc[i]['序号']
@@ -72,6 +72,7 @@ def main(unused_argv):
     for k, v in bib_data.entries.items():
       if len(v.persons) == 0: continue
       authors = v.persons['author']
+  '''
 
 if __name__ == "__main__":
   add_options()
