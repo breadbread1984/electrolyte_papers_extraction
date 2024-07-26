@@ -23,7 +23,7 @@ def add_paper(title, doi):
 
 def add_paper_author(doi, researcher_id):
   cypher = """match (a: Author {researcher_id: "%s"}),
-match (b: Paper {doi: "%s"})
+(b: Paper {doi: "%s"})
 merge (a)-[:CONTRIBUTES_TO]->(b);
 """ % (researcher_id, doi)
   return cypher
