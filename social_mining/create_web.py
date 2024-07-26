@@ -12,17 +12,20 @@ def add_options():
   flags.DEFINE_string('output', default = 'output.cypher', help = 'output cypher file')
 
 def add_author(author, researcher_id):
-  cypher = """merge (c: Author {name: %s, researcher_id: %s}) return c;""" % (author, researcher_id)
+  cypher = """merge (c: Author {name: %s, researcher_id: %s}) return c;
+""" % (author, researcher_id)
   return cypher
 
 def add_paper(title, doi):
-  cypher = """merge (c: Paper {title: %s, doi: %s}) return c;""" % (title, doi)
+  cypher = """merge (c: Paper {title: %s, doi: %s}) return c;
+""" % (title, doi)
   return cypher
 
 def add_paper_author(doi, researcher_id):
   cypher = """match (a: Author {researcher_id: %s}),
 match (b: Paper {doi: %s})
-merge (a)-[:CONTRIBUTES_TO]->(b);""" % (researcher_id, doi)
+merge (a)-[:CONTRIBUTES_TO]->(b);
+""" % (researcher_id, doi)
   return cypher
 
 def main(unused_argv):
