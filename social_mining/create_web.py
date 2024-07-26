@@ -38,7 +38,7 @@ def main(unused_argv):
       author, researcher_id = author.strip().split('/')
       author_info[author] = researcher_id
       # add author
-      output.write(add_author(author, researcher))
+      output.write(add_author(author, researcher_id))
     doi = sheet.iloc[i]['DOI'].strip()
     title = sheet.iloc[i]['Article Title'].strip()
     if doi == '' or title == '': continue
