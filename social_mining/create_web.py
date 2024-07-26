@@ -18,9 +18,9 @@ def add_author(author, researcher_id):
 """ % (author, researcher_id)
   return cypher
 
-def add_paper(title, doi):
-  cypher = """merge (c: Paper {title: "%s", doi: "%s"}) return c;
-""" % (title, doi)
+def add_paper(title, doi, cited):
+  cypher = """merge (c: Paper {title: "%s", doi: "%s", cited: %d}) return c;
+""" % (title, doi, cited)
   return cypher
 
 def add_paper_author(doi, researcher_id):
@@ -49,11 +49,13 @@ def main(unused_argv):
       output.write(add_author(author, researcher_id))
     doi = sheet.iloc[i]['DOI']
     title = sheet.iloc[i]['Article Title']
+    cited = sheet.iloc[i]['Times Cited, All Databases']
     if type(doi) is not str or doi == '' or \
-       type(title) is not str or title == '': continue
+       type(title) is not str or title == '' or \
+       type(cited) is not int or cited == '': continue
     doi, title = doi.strip(), title.strip()
     # add paper
-    output.write(add_paper(title, doi))
+    output.write(add_paper(title, doi, cited))
     for author, research_id in author_info.items():
       output.write(add_paper_author(doi, researcher_id))
   output.close()
