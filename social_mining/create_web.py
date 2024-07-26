@@ -33,10 +33,10 @@ def main(unused_argv):
   for i in sheet.index:
     authors = sheet.iloc[i]['Researcher Ids']
     if authors.strip() == '': continue
-    authors = dict()
+    author_info = dict()
     for author in authors.split(';'):
-      author, researcher_id = *author.strip().split('/')
-      authors[author] = researcher_id
+      author, researcher_id = author.strip().split('/')
+      author_info[author] = researcher_id
       # add author
       output.write(add_author(author, researcher))
     doi = sheet.iloc[i]['DOI'].strip()
@@ -44,7 +44,7 @@ def main(unused_argv):
     if doi == '' or title == '': continue
     # add paper
     output.write(add_paper(title, doi))
-    for author, research_id in authors.items():
+    for author, research_id in author_info.items():
       output.write(add_paper_author(doi, researcher_id))
   output.close()
 
