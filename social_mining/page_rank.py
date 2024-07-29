@@ -78,7 +78,40 @@ def main(unused_argv):
   with open('author_weights.pkl', 'wb') as f:
     f.write(pickle.dumps(author_weights))
   # 2) calculate connect components
+  def dfs(node, adj_matrix, visited, component):
+      """Performs DFS to find all nodes in the same connected component."""
+      stack = [node]
+      while stack:
+          current = stack.pop()
+          if not visited[current]:
+              visited[current] = True
+              component.append(current)
+              for neighbor, is_connected in enumerate(np.squeeze(adj_matrix.getrow(current).toarray(), axis = 0)):
+                  if is_connected and not visited[neighbor]:
+                      stack.append(neighbor)
 
+  def find_connected_components(adj_matrix):
+      """Finds all connected components in an undirected graph represented by an adjacency matrix."""
+      num_nodes = adj_matrix.shape[0]
+      visited = [False] * num_nodes
+      components = []
+
+      for node in range(num_nodes):
+          if not visited[node]:
+              component = []
+              dfs(node, adj_matrix, visited, component)
+              components.append(component)
+
+      return components
+
+  adj = weights.tocsr()
+  components = find_connected_components(adj)
+  components_new = list()
+  for component in components:
+    component_new = [authors[node] for node in component]
+    components_new.append(component_new)
+  with open('connected_components.pkl', 'wb') as f:
+    f.write(pickle.dumps(components_new))
 
 if __name__ == "__main__":
   add_options()
