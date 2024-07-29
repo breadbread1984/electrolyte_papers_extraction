@@ -23,11 +23,17 @@ def add_paper(index, title, doi, cited):
 """ % (index, title, doi, cited)
   return cypher
 
-def add_paper_author(index, researcher_id):
-  cypher = """match (a: Author {researcher_id: "%s"}),
+def add_paper_author(index, author, researcher_id):
+  if researcher_id != '':
+    cypher = """match (a: Author {researcher_id: "%s"}),
 (b: Paper {index: %d})
 merge (a)-[:CONTRIBUTES_TO]->(b);
 """ % (researcher_id, index)
+  else:
+    cypher = """match (a: Author {name: "%s"}),
+(b: Paper {index: %d})
+merge (a)-[:CONTRIBUTES_TO]->(b);
+""" % (author, index)
   return cypher
 
 def main(unused_argv):
@@ -64,7 +70,7 @@ def main(unused_argv):
     # add paper
     output.write(add_paper(index, title, doi, cited))
     for author, researcher_id in author_info.items():
-      output.write(add_paper_author(index, researcher_id))
+      output.write(add_paper_author(index, author, researcher_id))
   output.close()
   '''
   # 2) add author citation relationship
