@@ -55,7 +55,7 @@ def main(unused_argv):
     doi, title = doi.strip(), title.strip()
     # add paper
     output.write(add_paper(title, doi, cited))
-    for author, research_id in author_info.items():
+    for author, researcher_id in author_info.items():
       output.write(add_paper_author(doi, researcher_id))
   output.close()
   '''
