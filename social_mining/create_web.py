@@ -18,16 +18,16 @@ def add_author(author, researcher_id):
 """ % (author, researcher_id)
   return cypher
 
-def add_paper(title, doi, cited):
-  cypher = """merge (c: Paper {title: "%s", doi: "%s", cited: %d}) return c;
-""" % (title, doi, cited)
+def add_paper(index, title, doi, cited):
+  cypher = """merge (c: Paper {index: %d, title: "%s", doi: "%s", cited: %d}) return c;
+""" % (index, title, doi, cited)
   return cypher
 
-def add_paper_author(doi, researcher_id):
+def add_paper_author(index, researcher_id):
   cypher = """match (a: Author {researcher_id: "%s"}),
-(b: Paper {doi: "%s"})
+(b: Paper {index: %d})
 merge (a)-[:CONTRIBUTES_TO]->(b);
-""" % (researcher_id, doi)
+""" % (researcher_id, index)
   return cypher
 
 def main(unused_argv):
@@ -38,25 +38,33 @@ def main(unused_argv):
   output = open(FLAGS.output, 'w')
   for i in sheet.index:
     authors = sheet.iloc[i]['Researcher Ids']
-    if type(authors) is not str or authors.strip() == '': continue
     author_info = dict()
-    for author in authors.split(';'):
-      if author.strip() == '': continue
-      name_id = author.strip().split('/')
-      author, researcher_id = name_id[0], name_id[1]
-      author_info[author] = researcher_id
-      # add author
-      output.write(add_author(author, researcher_id))
+    if type(authors) is str and authors.strip() != '':
+      for author in authors.split(';'):
+        if author.strip() == '': continue
+        name_id = author.strip().split('/')
+        author, researcher_id = name_id[0], name_id[1]
+        author_info[author] = researcher_id
+        # add author
+        output.write(add_author(author, researcher_id))
+    else:
+      authors = sheet.iloc[i]['Authors']
+      authors = '' if type(authors) is not str else authors
+      for author in authors.split(';'):
+        author = author.strip()
+        if author == '': continue
+        author_info[author] = ''
+        # add author
+        output.write(add_author(author, ''))
+    index = sheet.iloc[i]['序号']
     doi = sheet.iloc[i]['DOI']
     title = sheet.iloc[i]['Article Title']
     cited = sheet.iloc[i]['Times Cited, All Databases']
-    if type(doi) is not str or doi == '' or \
-       type(title) is not str or title == '': continue
-    doi, title = doi.strip(), title.strip()
+    doi, title = str(doi).strip(), title.strip()
     # add paper
-    output.write(add_paper(title, doi, cited))
+    output.write(add_paper(index, title, doi, cited))
     for author, researcher_id in author_info.items():
-      output.write(add_paper_author(doi, researcher_id))
+      output.write(add_paper_author(index, researcher_id))
   output.close()
   '''
   # 2) add author citation relationship
