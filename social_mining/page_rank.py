@@ -48,7 +48,7 @@ def main(unused_argv):
   diags = np.maximum(np.squeeze(np.array(diags.data)), 1e-10).tolist()
   D = sparse.diags(diags) # D.shape(row, col)
   invD = sparse.linalg.inv(D)
-  T = A.transpose().multiply(invD)
+  T = A.transpose().dot(invD)
   C = sparse.coo_matrix(
     (
       np.ones((len(authors),)) * 1 / len(authors),
@@ -70,8 +70,13 @@ def main(unused_argv):
     shape = (len(authors),1)
   )
   for i in range(100):
-    C = T.multiply(C) + delta
-  np.save('page_rank.npy', C.tosense())
+    C = T.dot(C) + delta
+  C = C.todense()
+  author_weights = dict()
+  for idx, (id, name) in enumerate(C):
+    author_weights[id] = C[idx]
+  with open('author_weights.pkl', 'wb') as f:
+    f.write(pickle.dumps(author_weights))
   # 2) calculate connect components
 
 
