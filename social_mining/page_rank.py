@@ -71,10 +71,10 @@ def main(unused_argv):
   )
   for i in range(100):
     C = T.dot(C) + delta
-  C = C.todense()
+  C = C.toarray()
   author_weights = dict()
-  for idx, (id, name) in enumerate(authors.items()):
-    author_weights[id] = C[idx]
+  for id, weight in zip(authors, C):
+    author_weights[id] = weight
   with open('author_weights.pkl', 'wb') as f:
     f.write(pickle.dumps(author_weights))
   # 2) calculate connect components
