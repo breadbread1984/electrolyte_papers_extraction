@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 from absl import flags, app
+from os.path import exists
 from neo4j import GraphDatabase
+from scipy import sparse
 import numpy as np
 
 FLAGS = flags.FLAGS
@@ -13,21 +15,56 @@ def add_options():
   flags.DEFINE_string('db', default = 'neo4j', help = 'database')
 
 def main(unused_argv):
-  driver = GraphDatabase.driver(FLAGS.host, auth = (FLAGS.user, FLAGS.password))
-  records, summary, keys = driver.execute_query('match (a: Author) return a as author', database_ = FLAGS.db)
-  matches = [record['author'] for record in records]
-  authors = dict()
-  for match in matches:
-    authors[match.element_id] = match._properties['name']
-  weights = np.zeros((len(authors), len(authors)))
-  for idx1, (id1, name1) in enumerate(authors.items()):
-    for idx2, (id2, name2) in enumerate(authors.items()):
-      if id1 == id2: continue
-      records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
-      papers = [record['paper'] for record in records]
-      weight = np.sum([record.cited for record in records])
-      weights[idx1, idx2] = weight
-  np.save('weights.npy', weights)
+  if not exists('weights.npz'):
+    driver = GraphDatabase.driver(FLAGS.host, auth = (FLAGS.user, FLAGS.password))
+    records, summary, keys = driver.execute_query('match (a: Author) return a as author', database_ = FLAGS.db)
+    matches = [record['author'] for record in records]
+    authors = dict()
+    for match in matches:
+      authors[match.element_id] = match._properties['name']
+    data,row,col = list(),list(),list()
+    for idx1, (id1, name1) in enumerate(authors.items()):
+      for idx2, (id2, name2) in enumerate(authors.items()):
+        if id1 == id2: continue
+        records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
+        papers = [record['paper'] for record in records]
+        weight = np.sum([paper._properties['cited'] for paper in papers])
+        if weight == 0: continue
+        data.append(weight)
+        row.append(idx1)
+        col.append(idx2)
+    weights = sparse.coo_matrix((data, (row, col)), shape = (len(authors),len(authors)))
+    sparse.save_npz('weights.npz', weights, compress = True)
+  else:
+    weights = sparse.load_npz('weights.npz') # wights.shape = (row, col)
+  # 1) calculate author weight
+  A = weights.copy()
+  D = A.sum(axis = -1).diagonal() # D.shape(row, col)
+  invD = sparse.linalg.inv(D)
+  T = A.transpose().multiply(invD)
+  C = sparse.coo_matrix(
+    (
+      np.ones((len(authors),)) * 1 / len(authors),
+      (
+        np.range(len(authors)),
+        np.zeros((len(authors),))
+      )
+    ),
+    shape = (len(authors),1)
+  )
+  delta = sparse.coo_matrix(
+    (
+      np.ones((len(authors),)) * 1e-10,
+      (
+        np.range(len(authors)),
+        np.zeros((len(authors),))
+      )
+    ),
+    shape = (len(authors),1)
+  )
+  for i in range(100):
+    C = T.multiply(C) + delta
+  np.save('page_rank.npy', C.tosense())
 
 if __name__ == "__main__":
   add_options()
