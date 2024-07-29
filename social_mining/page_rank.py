@@ -73,7 +73,7 @@ def main(unused_argv):
     C = T.dot(C) + delta
   C = C.todense()
   author_weights = dict()
-  for idx, (id, name) in enumerate(C):
+  for idx, (id, name) in enumerate(authors.items()):
     author_weights[id] = C[idx]
   with open('author_weights.pkl', 'wb') as f:
     f.write(pickle.dumps(author_weights))
