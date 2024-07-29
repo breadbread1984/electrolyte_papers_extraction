@@ -34,7 +34,7 @@ def main(unused_argv):
         row.append(idx1)
         col.append(idx2)
     weights = sparse.coo_matrix((data, (row, col)), shape = (len(authors),len(authors)))
-    sparse.save_npz('weights.npz', weights, compress = True)
+    sparse.save_npz('weights.npz', weights)
     with open('authors.pkl', 'wb') as f:
       f.write(pickle.dumps(list(authors.keys())))
   else:
@@ -67,6 +67,8 @@ def main(unused_argv):
   for i in range(100):
     C = T.multiply(C) + delta
   np.save('page_rank.npy', C.tosense())
+  # 2) calculate connect components
+
 
 if __name__ == "__main__":
   add_options()
