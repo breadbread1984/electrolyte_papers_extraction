@@ -35,6 +35,8 @@ def main(unused_argv):
         col.append(idx2)
     weights = sparse.coo_matrix((data, (row, col)), shape = (len(authors),len(authors)))
     sparse.save_npz('weights.npz', weights, compress = True)
+    with open('authors.pkl', 'wb') as f:
+      f.write(pickle.dumps(list(authors.keys())))
   else:
     weights = sparse.load_npz('weights.npz') # wights.shape = (row, col)
   # 1) calculate author weight
