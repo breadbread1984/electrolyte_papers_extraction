@@ -39,3 +39,9 @@ sudo systemctl status neo4j
 python3 create_web.py --list <path/to/xls> --paper_dir <path/to/pdf/directory>
 bash run_cypher.sh
 ```
+
+## Calculate on the Knowledge Base
+
+```shell
+python3 page_rank.py [--host <host>] [--user <user>] [--password <password>] [--db <db>]
+```
