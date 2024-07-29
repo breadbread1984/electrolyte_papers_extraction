@@ -38,6 +38,7 @@ def main(unused_argv):
     sparse.save_npz('weights.npz', weights)
     with open('authors.pkl', 'wb') as f:
       f.write(pickle.dumps(list(authors.keys())))
+    authors = list(authors.keys())
   else:
     weights = sparse.load_npz('weights.npz') # wights.shape = (row, col)
     with open('authors.pkl', 'rb') as f:
