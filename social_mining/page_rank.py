@@ -63,7 +63,7 @@ def main(unused_argv):
     (
       np.ones((len(authors),)) * 1e-10,
       (
-        np.range(len(authors)),
+        np.arange(len(authors)),
         np.zeros((len(authors),))
       )
     ),
