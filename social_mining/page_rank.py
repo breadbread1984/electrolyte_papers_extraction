@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from absl import flags, app
+import pickle
 from os.path import exists
 from neo4j import GraphDatabase
 from scipy import sparse
@@ -39,16 +40,20 @@ def main(unused_argv):
       f.write(pickle.dumps(list(authors.keys())))
   else:
     weights = sparse.load_npz('weights.npz') # wights.shape = (row, col)
+    with open('authors.pkl', 'rb') as f:
+      authors = pickle.loads(f.read())
   # 1) calculate author weight
   A = weights.copy()
-  D = A.sum(axis = -1).diagonal() # D.shape(row, col)
+  diags = A.sum(axis = -1)
+  diags = np.maximum(np.squeeze(np.array(diags.data)), 1e-10).tolist()
+  D = sparse.diags(diags) # D.shape(row, col)
   invD = sparse.linalg.inv(D)
   T = A.transpose().multiply(invD)
   C = sparse.coo_matrix(
     (
       np.ones((len(authors),)) * 1 / len(authors),
       (
-        np.range(len(authors)),
+        np.arange(len(authors)),
         np.zeros((len(authors),))
       )
     ),
