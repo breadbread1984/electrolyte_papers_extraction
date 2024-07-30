@@ -35,9 +35,8 @@ def main(unused_argv):
     df.to_pickle('total_citation.npz')
   else:
     total_citation = pd.read_pickle('total_citation.npz')
-  weights = sparse.csr_matrix(total_citation.values)
   # 1) calculate author weight
-  A = weights.copy()
+  A = sparse.csr_matrix(total_citation.values)
   diags = A.sum(axis = -1)
   diags = np.maximum(np.squeeze(np.array(diags.data)), 1e-10).tolist()
   D = sparse.diags(diags) # D.shape(row, col)
