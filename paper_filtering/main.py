@@ -5,6 +5,7 @@ from os import walk
 from os.path import join, exists, splitext
 import json
 from tqdm import tqdm
+from langchain.document_loaders import UnstructuredPDFLoader
 from models import Llama3, Qwen2
 from summarize import summarize
 from prompts import relevant_template
