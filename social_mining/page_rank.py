@@ -44,20 +44,20 @@ def main(unused_argv):
   T = A.dot(invD)
   C = sparse.coo_matrix(
     (
-      np.ones((len(total_citation.index),)) * 1 / len(total_citation.index),
+      np.ones(len(total_citation.index)) * 1 / len(total_citation.index),
       (
         np.arange(len(total_citation.index)),
-        np.zeros((len(total_citation.index),))
+        np.zeros(len(total_citation.index))
       )
     ),
     shape = (len(total_citation.index),1)
   )
   delta = sparse.coo_matrix(
     (
-      np.ones((len(total_citation.index),)) * 1e-10,
+      np.ones(len(total_citation.index)) * 1e-10,
       (
         np.arange(len(total_citation.index)),
-        np.zeros((len(total_citation.index),))
+        np.zeros(len(total_citation.index))
       )
     ),
     shape = (len(total_citation.index),1)
