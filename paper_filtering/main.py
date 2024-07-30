@@ -36,7 +36,7 @@ def main(unused_argv):
       stem, ext = splitext(f)
       if ext != '.pdf': continue
       loader = UnstructuredPDFLoader(join(root, f), mode = 'single')
-      text = ''.join([doc.page_context for doc in loader.load()])
+      text = ''.join([doc.page_content for doc in loader.load()])
       summary = summarize(text, FLAGS.detail, llm = llm, tokenizer = tokenizer)
       answer = relevant_chain.invoke({'text': summary})
       output[join(root, f)] = answer
