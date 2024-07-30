@@ -26,7 +26,7 @@ def main(unused_argv):
     )
     for from_author_id in total_citation.index:
       for to_author_id in total_citation.columns:
-        if frome_author_id == to_author_id: continue
+        if from_author_id == to_author_id: continue
         records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = from_author_id, id2 = to_author_id, database_ = FLAGS.db)
         papers = [record['paper'] for record in records]
         weight = np.sum([paper._properties['cited'] for paper in papers])
