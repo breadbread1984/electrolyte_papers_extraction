@@ -33,6 +33,7 @@ def main(unused_argv):
       summary = summarize(text, FLAGS.detail, llm = llm, tokenizer = tokenizer)
       answer = relevant_chain.invoke({'text': summary})
       output[join(root, f)] = answer
+      print(f'{join(root,f)}: {answer}\n')
   with open(FLAGS.output_json, 'w') as f:
     f.write(json.dumps(output, indent = 2))
 
