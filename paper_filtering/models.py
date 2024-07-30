@@ -71,7 +71,7 @@ def Llama2(locally = False):
 
 def Llama3(locally = False):
   login(token = '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')
-  tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct')
+  tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3.1-8B-Instruct')
   if locally:
     llm = HuggingFacePipeline.from_model_id(
       model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct",
