@@ -45,3 +45,11 @@ bash run_cypher.sh
 ```shell
 python3 page_rank.py [--host <host>] [--user <user>] [--password <password>] [--db <db>]
 ```
+
+Upon executing the script successfully, there will be 3 new files generated.
+
+| file | description |
+|------|-------------|
+|total_citation.npz|dataframe storing total citation number coauthored by the author pairs |
+|author_weights.pkl|author weight calculated by page rank |
+|connected_components.pkl| connect components |
