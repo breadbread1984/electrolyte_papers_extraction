@@ -5,6 +5,7 @@ import pickle
 from os.path import exists
 from neo4j import GraphDatabase
 from scipy import sparse
+import pandas as pd
 import numpy as np
 
 FLAGS = flags.FLAGS
@@ -16,40 +17,32 @@ def add_options():
   flags.DEFINE_string('db', default = 'neo4j', help = 'database')
 
 def main(unused_argv):
-  if not exists('weights.npz'):
+  if not exists('total_citation.npz'):
     driver = GraphDatabase.driver(FLAGS.host, auth = (FLAGS.user, FLAGS.password))
     records, summary, keys = driver.execute_query('match (a: Author) return a as author', database_ = FLAGS.db)
-    matches = [record['author'] for record in records]
-    authors = dict()
-    for match in matches:
-      authors[match.element_id] = match._properties['name']
-    data,row,col = list(),list(),list()
-    for idx1, (id1, name1) in enumerate(authors.items()):
-      for idx2, (id2, name2) in enumerate(authors.items()):
-        if id1 == id2: continue
-        records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = id1, id2 = id2, database_ = FLAGS.db)
+    total_citation = pd.DataFrame(
+      {record['author'].element_id: np.zeros(len(records)) for record in records},
+      index = [record['author'].element_id for record in records]
+    )
+    for from_author_id in total_citation.index:
+      for to_author_id in total_citation.columns:
+        if frome_author_id == to_author_id: continue
+        records, summary, keys = driver.execute_query('match (a: Author)-[:CONTRIBUTES_TO]->(c: Paper)<-[:CONTRIBUTES_TO]-(b: Author) where elementid(a) = $id1 and elementid(b) = $id2 return c as paper', id1 = from_author_id, id2 = to_author_id, database_ = FLAGS.db)
         papers = [record['paper'] for record in records]
         weight = np.sum([paper._properties['cited'] for paper in papers])
         if weight == 0: continue
-        data.append(weight)
-        row.append(idx1)
-        col.append(idx2)
-    weights = sparse.coo_matrix((data, (row, col)), shape = (len(authors),len(authors)))
-    sparse.save_npz('weights.npz', weights)
-    with open('authors.pkl', 'wb') as f:
-      f.write(pickle.dumps(list(authors.keys())))
-    authors = list(authors.keys())
+        total_citation.loc[from_author_id, to_author_id] = weight
+    df.to_pickle('total_citation.npz')
   else:
-    weights = sparse.load_npz('weights.npz') # wights.shape = (row, col)
-    with open('authors.pkl', 'rb') as f:
-      authors = pickle.loads(f.read())
+    total_citation = pd.read_pickle('total_citation.npz')
+  weights = sparse.csr_matrix(total_citation.values)
   # 1) calculate author weight
   A = weights.copy()
   diags = A.sum(axis = -1)
   diags = np.maximum(np.squeeze(np.array(diags.data)), 1e-10).tolist()
   D = sparse.diags(diags) # D.shape(row, col)
   invD = sparse.linalg.inv(D)
-  T = A.transpose().dot(invD)
+  T = A.dot(invD)
   C = sparse.coo_matrix(
     (
       np.ones((len(authors),)) * 1 / len(authors),
@@ -87,7 +80,7 @@ def main(unused_argv):
           if not visited[current]:
               visited[current] = True
               component.append(current)
-              for neighbor, is_connected in enumerate(np.squeeze(adj_matrix.getrow(current).toarray(), axis = 0)):
+              for neighbor, is_connected in enumerate(adj_matrix.iloc[current]):
                   if is_connected and not visited[neighbor]:
                       stack.append(neighbor)
 
@@ -105,11 +98,11 @@ def main(unused_argv):
 
       return components
 
-  adj = weights.tocsr()
+  adj = total_citation
   components = find_connected_components(adj)
   components_new = list()
   for component in components:
-    component_new = [authors[node] for node in component]
+    component_new = [total_citation.index[node] for node in component]
     components_new.append(component_new)
   with open('connected_components.pkl', 'wb') as f:
     f.write(pickle.dumps(components_new))
