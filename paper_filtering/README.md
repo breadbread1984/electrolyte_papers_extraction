@@ -12,6 +12,14 @@ python3 -m pip install -r requirements.txt
 
 ## Run the program
 
+identity with LLM
+
 ```shell
 python3 main.py --input_dir <path/to/directory> [--locally]
+```
+
+identity with keyword presenting
+
+```shell
+python3 simple_filter.py --input_dir <path/to/directory>
 ```
