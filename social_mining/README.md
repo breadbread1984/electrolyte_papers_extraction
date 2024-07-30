@@ -50,6 +50,6 @@ Upon executing the script successfully, there will be 3 new files generated.
 
 | file | description |
 |------|-------------|
-|total_citation.npz|dataframe storing total citation number coauthored by the author pairs |
+|total_citation.npz|dataframe storing total citation number of papers coauthored by the author pairs |
 |author_weights.pkl|author weight calculated by page rank |
 |connected_components.pkl| connect components |
