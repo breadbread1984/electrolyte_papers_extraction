@@ -32,7 +32,7 @@ def main(unused_argv):
         weight = np.sum([paper._properties['cited'] for paper in papers])
         if weight == 0: continue
         total_citation.loc[from_author_id, to_author_id] = weight
-    df.to_pickle('total_citation.npz')
+    total_citation.to_pickle('total_citation.npz')
   else:
     total_citation = pd.read_pickle('total_citation.npz')
   # 1) calculate author weight
