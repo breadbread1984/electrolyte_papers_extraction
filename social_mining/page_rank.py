@@ -45,29 +45,29 @@ def main(unused_argv):
   T = A.dot(invD)
   C = sparse.coo_matrix(
     (
-      np.ones((len(authors),)) * 1 / len(authors),
+      np.ones((len(total_citation.index),)) * 1 / len(total_citation.index),
       (
-        np.arange(len(authors)),
-        np.zeros((len(authors),))
+        np.arange(len(total_citation.index)),
+        np.zeros((len(total_citation.index),))
       )
     ),
-    shape = (len(authors),1)
+    shape = (len(total_citation.index),1)
   )
   delta = sparse.coo_matrix(
     (
-      np.ones((len(authors),)) * 1e-10,
+      np.ones((len(total_citation.index),)) * 1e-10,
       (
-        np.arange(len(authors)),
-        np.zeros((len(authors),))
+        np.arange(len(total_citation.index)),
+        np.zeros((len(total_citation.index),))
       )
     ),
-    shape = (len(authors),1)
+    shape = (len(total_citation.index),1)
   )
   for i in range(100):
     C = T.dot(C) + delta
   C = C.toarray()
   author_weights = dict()
-  for id, weight in zip(authors, C):
+  for id, weight in zip(total_citation.index, C):
     author_weights[id] = weight
   with open('author_weights.pkl', 'wb') as f:
     f.write(pickle.dumps(author_weights))
