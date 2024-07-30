@@ -22,7 +22,12 @@ def main(unused_argv):
     'llama3': Llama3,
     'qwen2': Qwen2,
   }[FLAGS.model](FLAGS.locally)
-  relevant_chain = relevant_template(tokenizer) | llm | lambda message: message.replace('assistant\n\n','') if message.startswith('assistant\n\n') else message
+  def parser(message):
+    if message.startswith('assistant\n\n'):
+      return message.replace('assistant\n\n','')
+    else:
+      return message
+  relevant_chain = relevant_template(tokenizer) | llm | parser
   output = dict()
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
