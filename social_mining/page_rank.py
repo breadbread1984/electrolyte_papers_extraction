@@ -105,6 +105,12 @@ def main(unused_argv):
     components_new.append(component_new)
   with open('connected_components.pkl', 'wb') as f:
     f.write(pickle.dumps(components_new))
+  # 3) get author element id
+  driver = GraphDatabase.driver(FLAGS.host, auth = (FLAGS.user, FLAGS.password))
+  records, summary, keys = driver.execute_query('match (a: Author) return a as author', database_ = FLAGS.db)
+  author_list = {record['author'].element_id: record['author']._properties['name'] for record in records}
+  with open('authors.pkl', 'wb') as f:
+    f.write(pickle.dumps(author_list))
 
 if __name__ == "__main__":
   add_options()
