@@ -8,6 +8,7 @@ this project is to identify whether the papers are relevant to sulfide electroly
 
 ```shell
 python3 -m pip install -r requirements.txt
+sudo apt install poppler-utils
 ```
 
 ## Run the program
