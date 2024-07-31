@@ -21,3 +21,4 @@ sentence-transformers
 chromadb
 adaseq
 oss2
+datasets==2.18.0
