@@ -56,3 +56,9 @@ to
         "https://files.pythonhosted.org/packages/49/47/ddf684253dbb4c3e0716fcda67094aa3c407237d5eb8930ede0a91b9feb8/adaseq-0.6.6-py3-none-any.whl"
     ]
 ```
+
+## Test Bert+CRF model
+
+```shell
+adaseq test -ckpt ckpt/ner/<checkpoint>/best_model -w ckpt/ner/<checkpoint>
+```
