@@ -1,1 +1,2 @@
 total_citation.npz filter=lfs diff=lfs merge=lfs -text
+authors.pkl filter=lfs diff=lfs merge=lfs -text
