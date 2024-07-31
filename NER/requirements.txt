@@ -20,3 +20,4 @@ pikepdf
 sentence-transformers
 chromadb
 adaseq
+oss2
