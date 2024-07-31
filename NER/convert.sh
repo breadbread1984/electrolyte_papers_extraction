@@ -2,8 +2,8 @@
 
 rm -rf "$2"
 mkdir "$2"
-for f in "$1"/*.txt
+for f in "$1"/*.json
 do
-    bn="$(basename $f .txt)"
+    bn="$(basename $f .json)"
     python3 create_dataset.py --input "$f" --output "$2"/"$bn".jsonl
 done
