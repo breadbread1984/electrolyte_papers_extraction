@@ -53,3 +53,4 @@ Upon executing the script successfully, there will be 3 new files generated.
 |total_citation.npz|dataframe storing total citation number of papers coauthored by the author pairs |
 |author_weights.pkl|author weight calculated by page rank |
 |connected_components.pkl| connect components |
+|authors.pkl| map from elementid to author name |
