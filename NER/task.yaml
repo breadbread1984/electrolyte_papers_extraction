@@ -7,8 +7,8 @@ task: named-entity-recognition
 
 dataset:
   data_file:
-    train: '/home/xieyi/raid/NER/train.json'
-    valid: '/home/xieyi/raid/NER/train.json'
+    train: '/home/xieyi/raid/NER/trainset.jsonl'
+    valid: '/home/xieyi/raid/NER/trainset.jsonl'
   data_type: json_tags
 
 preprocessor:
