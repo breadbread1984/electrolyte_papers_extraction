@@ -38,3 +38,21 @@ cat output/*.jsonl trainset.jsonl
 adaseq train -c task.yaml
 ```
 
+after training, find the **latest checkpoint** under ckpt/ner/. edit <path/to/latest/checkpoint>/output_best/configuration.json to change the following lines
+
+from
+
+```json
+    "plugins": [
+        "adaseq"
+    ]
+
+```
+
+to
+
+```json
+    "plugins": [
+        "https://files.pythonhosted.org/packages/49/47/ddf684253dbb4c3e0716fcda67094aa3c407237d5eb8930ede0a91b9feb8/adaseq-0.6.6-py3-none-any.whl"
+    ]
+```
