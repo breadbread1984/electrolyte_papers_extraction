@@ -21,10 +21,10 @@ def main(unused_argv):
       if ext != '.pdf': continue
       loader = UnstructuredPDFLoader(join(root, f), mode = 'single')
       text = ''.join([doc.page_content for doc in loader.load()])
-      relevant = text.find('sulfide') >= 0 and text.find('electrolyte') >= 0
+      relevant = text.lower().find('sulfide') >= 0 and text.lower().find('electrolyte') >= 0
       unrelevant_files.append(join(root, f))
   with open(FLAGS.output_json, 'w') as f:
-    f.write(json.dumps(unrelevant_files))
+    f.write(json.dumps(unrelevant_files, indent = 2, ensure_ascii = False))
 
 if __name__ == "__main__":
   add_options()
