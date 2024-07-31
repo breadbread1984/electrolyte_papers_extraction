@@ -19,3 +19,4 @@ onnxruntime
 pikepdf
 sentence-transformers
 chromadb
+adaseq
