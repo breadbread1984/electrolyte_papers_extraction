@@ -41,6 +41,7 @@ def main(unused_argv):
           ('B-' + tag) if idx == 0 else \
           ('E-' + tag) if idx == len(entity_tokens) - 1 else \
           ('I-' + tag)
+    if len(tokens) == 0 or len(ner_tags) == 0: continue
     samples.append({'text': [token[0] for token in tokens], 'labels': ner_tags})
   with open(FLAGS.output, 'w') as f:
     for sample in samples:
