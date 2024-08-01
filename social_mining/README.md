@@ -54,3 +54,9 @@ Upon executing the script successfully, there will be 3 new files generated.
 |author_weights.pkl|author weight calculated by page rank |
 |connected_components.pkl| connect components |
 |authors.pkl| map from elementid to author name |
+
+## Visualize author relationship
+
+```shell
+python3 visualize.py
+```
