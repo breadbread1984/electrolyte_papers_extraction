@@ -29,10 +29,18 @@ python3 preprocess.py --input_dir <path/to/pdf> [--output_dir <path/to/preproces
 
 ```shell
 bash convert.sh <path/to/spacy/annotation/file> output
-cat output/*.jsonl trainset.jsonl
+cat output/*.jsonl <path/to/dataset.jsonl>
 ```
 
-## Train Bert+CRF model
+convert adaseq format dataset to huggingface format dataset
+
+```shell
+python3 adaseq_to_hf.py --input <path/to/dataset.jsonl> --output <path/to/output.json>
+```
+
+## Train model
+
+### Train Bert+CRF with Adaseq
 
 ```shell
 adaseq train -c task.yaml
@@ -57,8 +65,22 @@ to
     ]
 ```
 
-## Test Bert+CRF model
+### Train Bert with Huggingface
+
+```shell
+python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-cased --train_file <path/to/trainset.json> --validation_file <path/to/valset.json> --output_dir <path/to/ckpt> --do_train --do_eval --overwrite_output_dir --num_train_epochs 10
+```
+
+## Test model
+
+### Test Bert+CRF with Adaseq
 
 ```shell
 adaseq test -ckpt ckpt/ner/<checkpoint>/best_model -w ckpt/ner/<checkpoint>
+```
+
+### Test Bert with HuggingFace
+
+```shell
+python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-cased --validation_file <path/to/valset.json> --output_dir <path/to/ckpt> --do_eval --overwrite_output_dir
 ```

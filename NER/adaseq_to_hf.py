@@ -5,7 +5,7 @@ FLAGS = flags.FLAGS
 
 def add_options():
   flags.DEFINE_string('input', default = None, help = 'path to jsonl file')
-  flags.DEFINE_string('output', default = 'output.jsonl', help = 'path to output file')
+  flags.DEFINE_string('output', default = 'output.json', help = 'path to output file')
 
 def main(unused_argv):
   with open(FLAGS.input, 'r') as in_:
