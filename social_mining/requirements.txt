@@ -2,3 +2,7 @@ absl-py
 pybtex
 pandas
 neo4j
+networkx
+numpy
+scikit-learn
+matplotlib
