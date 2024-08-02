@@ -54,7 +54,8 @@ class NER(object):
             status = 'appendable'
           elif token['entity'][:2] == 'I-':
             # appendable token
-            if entities[-1]['end'] == token['start']:
+            if entities[-1]['end'] == token['start'] or \
+               entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' ':
               # positional next to the last token
               entities[-1]['value'] += token['word']
               entities[-1]['end'] = token['end']
@@ -70,7 +71,8 @@ class NER(object):
               status = 'appendable'
           elif token['entity'][:2] == 'E-':
             # appendable token
-            if entities[-1]['end'] == token['start']:
+            if entities[-1]['end'] == token['start'] or \
+               entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' ':
               # positional next to the last token
               entities[-1]['value'] += token['word']
               entities[-1]['end'] = token['end']
