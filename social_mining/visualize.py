@@ -23,7 +23,7 @@ for id_, scaled_weight in zip(data.keys(), scaled_weights):
     node_size = max(scaled_weight * 500, min_node_size)
     G.add_node(id_, value=node_size)
 
-total_citation = pd.read_pickle('total_citation.npz')
+total_citation = pd.read_pickle('total_citation.npz', compression = 'gzip')
 
 for row in total_citation.index:
     for col in total_citation.columns:
