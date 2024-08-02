@@ -95,8 +95,8 @@ class NER(object):
     return entities
 
 class PDFNER(NER):
-  def __init__(self, ckpt, device = 'gpu', chunk_size = 300, chunk_overlap = 0):
-    super(PDFNER, self).__init__(ckpt, device)
+  def __init__(self, ckpt, framework = 'huggingface', device = 'gpu', chunk_size = 300, chunk_overlap = 0):
+    super(PDFNER, self).__init__(ckpt, framework, device)
     self.splitter = RecursiveCharacterTextSplitter(chunk_size = chunk_size, chunk_overlap = chunk_overlap)
   def process(self, pdf):
     metadata = dict()
