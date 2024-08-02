@@ -32,9 +32,9 @@ def main(unused_argv):
         weight = np.sum([paper._properties['cited'] for paper in papers])
         if weight == 0: continue
         total_citation.loc[from_author_id, to_author_id] = weight
-    total_citation.to_pickle('total_citation.npz')
+    total_citation.to_pickle('total_citation.npz', compression = 'gzip')
   else:
-    total_citation = pd.read_pickle('total_citation.npz')
+    total_citation = pd.read_pickle('total_citation.npz', compression = 'gzip')
   # 1) calculate author weight
   A = sparse.csr_matrix(total_citation.values)
   diags = A.sum(axis = -1)
