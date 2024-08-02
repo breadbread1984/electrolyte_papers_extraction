@@ -1,5 +1,5 @@
 experiment:
-  exp_dir: ckpt/
+  exp_dir: adaseq_ckpt/
   exp_name: ner
   seed: 42
 
