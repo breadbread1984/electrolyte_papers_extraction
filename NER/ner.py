@@ -69,7 +69,7 @@ class NER(object):
               # positional next to the last token
               entities[-1]['value'] += token['word'] if entities[-1]['end'] == token['start'] else (' ' + token['word'])
               entities[-1]['end'] = token['end']
-              status = 'none-appendable'
+              status = 'appendable'
             else:
               # positional not continued
               entities.append({
@@ -78,7 +78,7 @@ class NER(object):
                 'start': token['start'],
                 'end': token['end']
               })
-              status = 'none-appendable'
+              status = 'appendable'
           else:
             raise Exception('unknown condition!')
         else:
