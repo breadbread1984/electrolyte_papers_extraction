@@ -84,3 +84,10 @@ adaseq test -ckpt ckpt/ner/<checkpoint>/best_model -w ckpt/ner/<checkpoint>
 ```shell
 python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-cased --validation_file <path/to/valset.json> --output_dir <path/to/ckpt> --do_eval --overwrite_output_dir
 ```
+
+## Extract entities from papers
+
+```shell
+python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|gpu)]
+```
+
