@@ -1,0 +1,425 @@
+{
+    "classes": [
+        "SULFIDE_ELECTROLYTE",
+        "IONIC_CONDUCTIVITY",
+        "ELECTROCHEMICAL_STABILITY_WINDOW",
+        "MECHANICAL_STRENGTH",
+        "YOUNGS_MODULUS",
+        "DENSITY",
+        "STRUCTURE"
+    ],
+    "annotations": [
+        null,
+        null,
+        null,
+        null,
+        [
+            "Abstract We introduce a paradigm of solvent and binder selection for solution-processing Li6PS5Cl solid-state electrolyte particles based on Hansen solubility parameters. Treatment of the Li6PS5Cl in selected solvents results in particle morphological change, but crystallographic structure remains intact. Although solution processing reduced the Li6PS5Cl ionic conductivity, it promotes interfacial stability by alleviating reduction of the solid electrolyte in contact with Li metal. These",
+            {
+                "entities": [
+                    [
+                        89,
+                        97,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        188,
+                        196,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        348,
+                        356,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "next-generation SSEs, because of its earth abundance, low-cost, high room-temper- ature ionic conductivity, and mechanical deformability.[1,2] In particular, lithium argyrodites (Li6PS5X, X = Cl, Br, or I) show great promise as a solid electrolyte material. Despite promis- ing progress in the past decade, to fabricate the sulfide SSE into thin but robust membranes remains challenging. In gen- eral, two methods exist for such a purpose—dry processing and wet chemical processing. For the former,",
+            {
+                "entities": [
+                    [
+                        179,
+                        186,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "powders and a polymer binder in an organic solvent to obtain a homogeneous suspension, followed by slurry casting on a substrate and solvent evaporation. For instance, Liu et al. fabri- cated 35 µm polydopamine-coated Li6PS5Cl (LPSCl) thin films by slurry processing in a solution of dopamine hydrochloride, chlorobenzene, and piperidine.[10] Emley et al. demonstrated excellent film homogeneity by slurry casting nitrile butadiene rubber (NBR) and LPSCl in a 50:50 mixture of isobutyl isobu- tyrate",
+            {
+                "entities": [
+                    [
+                        218,
+                        226,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "and toluene.[11] Lee et al. investigated a wide variety of solvents and binders for slurry processing of 75Li2S·25P2S5, LiNi0.8Co0.1Mn0.1O2, and Denka black composite cathodes. They found ionic conductivity was improved by better disper- sion homogeneity, which was achieved by using solvent/binder combinations with mildly polar characteristics.[12] The compat- ibility between the solvent, binder, and sulfide electrolyte is critical in wet chemical processing for the fabrication of these",
+            {
+                "entities": [
+                    [
+                        105,
+                        118,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        120,
+                        139,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Solvent treatment of neat LPSCl is found to decrease room- temperature ionic conductivity regardless of solvent choice. Herein, we show that two key criteria for solution-processing sulfide SSEs include the following: (i) good dispersion of the polymer binder and sulfide Li6PS5Cl SSE in a solvent and (ii) chemical compatibility of the Li6PS5Cl SSE with the solvent. For the former, we propose a protocol to select solvents and binders for solution-processing Li6PS5Cl based on HSPs. We show the",
+            {
+                "entities": [
+                    [
+                        272,
+                        280,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        337,
+                        345,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        461,
+                        469,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "using 4 Å molecular sieves for a minimum of two weeks). Li6PS5Cl (3–5 µm; NEI Corp., New Jersey, US)",
+            {
+                "entities": [
+                    [
+                        56,
+                        64,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "XRD was performed to further confirm preservation of bulk crystalline structure. Rietveld refinements are plotted in the bottom three panels of Fig. 2 for neat LPSCl, LPSCl-TOL, and LPSCl-EP. Refined XRD plots and lattice parameters are given in Fig. S5. Samples processed in Chex, EA, EP, and TOL were phase-pure cubic phases (space group F-43 m) whose structures which were consistent with that of pristine LPSCl. Further- more, all samples exhibited similar peak widths, indicating that solvent",
+            {
+                "entities": [
+                    [
+                        340,
+                        346,
+                        "STRUCTURE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "determined by fitting the EIS data to equivalent circuit (i) in Fig. 3(a) and was found to be 0.90 ± 0.05 mS/cm and 0.89 ± 0.05 mS/cm, respectively. These were only slightly lower",
+            {
+                "entities": [
+                    [
+                        94,
+                        111,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        116,
+                        133,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        [
+            "than that of the neat LPSCl sample (1.10 ± 0.08 mS/cm), which was determined in the same fashion. Fitting to equivalent circuit (ii) in Fig. 3(a), room-temperature ionic conductivity of LPSCl- CHex and LPSCl-TOL samples was found to be 0.44 ± 0.02 mS/ cm and 0.32 ± 0.03 mS/cm, respectively. The root cause of this difference is not clear, but it is worth noting ionic conductivity of the samples treated with cyclic solvent molecules was lower than that of those treated with linear solvent",
+            {
+                "entities": [
+                    [
+                        36,
+                        53,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        236,
+                        254,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        259,
+                        276,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "increased interfacial and grain boundary resistance of Li7P3S11 after treatment with THF compared with AN-treated Li7P3S11 samples.[22]",
+            {
+                "entities": [
+                    [
+                        55,
+                        63,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        114,
+                        122,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Figure 3. Solvent-treated LPSCl powders were electrochemically characterized by (a) room-temperature ionic conductivity, (b) tempera- ture-dependent ionic conductivity, and (c) stability against lithium metal at 100 µA/cm2, 150 µA/cm2, and 200 µA/cm2.MRS COMMUNICATIONS · VOLUME 13 · ISSUE 6 · www.mrs.org/mrc 1067",
+            {
+                "entities": [
+                    [
+                        212,
+                        222,
+                        "DENSITY"
+                    ],
+                    [
+                        224,
+                        234,
+                        "DENSITY"
+                    ],
+                    [
+                        240,
+                        254,
+                        "DENSITY"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Li|SSE|Li symmetric cells were cycled at three current densities. The corresponding voltage profiles are shown in Fig. 3(c). LPSCl-EA shorts first (100 µA/cm2, hour 18), fol- lowed by LPSCl-CHex (200 µA/cm2, hour 25). In the first cycle, the overpotential (Ewe) of LPSCl-TOL drops slightly; however, it stabilizes significantly soon after. This Ewe drop was presumed to happen because of imperfect contact with the Li; after current was applied to the cell, the imperfect con- tact was rectified, so",
+            {
+                "entities": [
+                    [
+                        0,
+                        9,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        148,
+                        158,
+                        "DENSITY"
+                    ],
+                    [
+                        196,
+                        206,
+                        "DENSITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Interestingly, solvent processing affects the Li/LPSCl interfacial stability. To explore the interfacial structure/ chemistry, we further performed Raman mapping on the Li/ LPSCl interface of uncycled cells (Fig. S6a). Each cross- sectional Raman mapping composed of a 50 × 50 spectra array. The Raman mapping scaled with intensity of a single 3− tetra- peak (e.g., 419 cm−1 peak stemmed from the PS4 hedra) shows the distribution of the Li6PS5Cl (Fig. S6b). However, the interfacial chemical",
+            {
+                "entities": [
+                    [
+                        438,
+                        446,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "(50 × 50 µm2) as shown in Fig. 4 (a) and (b). For the Li/neat LPSCl, Clusters 1–4 clearly show that at the interface, 4 new peaks (denoted as I-IV) emerged that are different from the bulk LPSCl. Peak I centered at 327 cm−1, is assigned to the phonon mode of LiCl-Li,[26] Peak II at 451 cm−1 may be ascribed to the S–S bending mode in the Li2Sx.[27] Assigning Peaks III (617 cm−1) and IV (862 cm−1) is difficult due to the complex characteristics of Li2Sx. However, they can be tentatively assigned",
+            {
+                "entities": [
+                    [
+                        339,
+                        345,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        450,
+                        456,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "to S-Li bending mode and asymmetric S-Li stretching mode in the polysulfide, respectively. Meng et al. [25] have shown in recent work that when in contact with the Li anode, Li6PS5Cl undergoes sequential reduction decomposition to form an intermediate Li3PS4 and lithium chloride (LiCl). The Li3PS4 is further reduced to lithium sulfide (Li2S) and lithium phosphide (Li3P). Our observa- tions of the reduction byproducts through Raman mapping at the Li/neat LPSCl interface align well with Meng’s",
+            {
+                "entities": [
+                    [
+                        174,
+                        182,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        252,
+                        258,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        292,
+                        298,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        338,
+                        342,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Conclusion In summary, we show that good dispersion of the polymer binder and sulfide Li6PS5Cl SSE in a solvent, and chemi- cal compatibility of the Li6PS5Cl SSE with the solvent are two criteria to consider for solution processing of the sulfide SSEs. For the former, we propose a paradigm to select sol- vents and binders for solution-processing Li6PS5Cl based on HSPs, values for which we have proposed in the above text. We show the several selected solvents alter the particle mor- phology but",
+            {
+                "entities": [
+                    [
+                        86,
+                        94,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        149,
+                        157,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        348,
+                        356,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "References 1. S. Ohno, W.G. Zeier, Toward practical solid-state lithium-sulfur batteries: challenges and perspectives. Acc. Mater. Res. 2(10), 869–880 (2021) J. Auvergniot, A. Cassel, J.-B. Ledeuil, V. Viallet, V. Seznec, R. Dedry- vère, Interface stability of argyrodite Li6PS5Cl toward LiCoO2, LiNi1/3Co1/3Mn1/3O2, and LiMn2O4 in Bulk All-solid-state batteries. Chem. Mater. 29(9), 3883–3890 (2017)2.",
+            {
+                "entities": [
+                    [
+                        272,
+                        280,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "6. D.H.S. Tan, Y.S. Meng, J. Jang, Scaling up high-energy-density sulfidic solid- state batteries: a lab-to-pilot perspective. Joule 6(8), 1755–1769 (2022) J. Zhang, H. Zhong, C. Zheng, Y. Xia, C. Liang, H. Huang, Y. Gan, X. Tao, W. Zhang, All-solid-state batteries with slurry coated LiNi0.8Co0.1Mn01O.2 composite cathode and Li6PS5Cl electrolyte: effect of binder content. J. Power Sources 391, 73–79 (2018)7.",
+            {
+                "entities": [
+                    [
+                        327,
+                        335,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "21. W. Yu, W. Hou, Correlations of surface free energy and solubility param- eters for solid substances. J. Colloid Interface Sci. 544, 8–13 (2019) 22. R.C. Xu, X.H. Xia, Z.J. Yao, X.L. Wang, C.D. Gu, J.P. Tu, Preparation of Li7P3S11 glass-ceramic electrolyte by dissolution-evaporation methodMRS COMMUNICATIONS · VOLUME 13 · ISSUE 6 · www.mrs.org/mrc 1069for all-solid-state lithium ion batteries. Electrochim. Acta 219, 235–240 (2016)",
+            {
+                "entities": [
+                    [
+                        225,
+                        233,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "26. A. Merwin, W.C. Phillips, M.A. Williamson, J.L. Willit, P.N. Motsegood, D. Chidambaram, Presence of Li Clusters in Molten LiCl-Li. Sci. Rep. 6(1), 25435 (2016)1070MRS COMMUNICATIONS · VOLUME 13 · ISSUE 6 · www.mrs.org/mrc27. P. Partovi-Azar, T.D. Kühne, P. Kaghazchi, Evidence for the existence of Li2S2 clusters in lithium–sulfur batteries: ab initio Raman spectroscopy simulation. Phys. Chem. Chem. Phys. 17(34), 22009–22014 (2015)",
+            {
+                "entities": [
+                    [
+                        302,
+                        307,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,743 @@
+{
+    "classes": [
+        "SULFIDE_ELECTROLYTE",
+        "IONIC_CONDUCTIVITY",
+        "ELECTROCHEMICAL_STABILITY_WINDOW",
+        "MECHANICAL_STRENGTH",
+        "YOUNGS_MODULUS",
+        "DENSITY",
+        "STRUCTURE"
+    ],
+    "annotations": [
+        [
+            "Study of the Capacity Fading Mechanismfor Fe-Substituted LiCoO2 PositiveElectrodeVictoria L. McLaren, Anthony R. West,Mitsuharu Tabuchi et al.-All-Solid-State Lithium Battery with LiCo0.3Ni0.7 O2 Fine Powder as Cathode Materials with anAmorphous Sulfide ElectrolyteTo cite this article: N. Machida et al 2002 J. Electrochem. Soc. 149 A688Journal of The ElectrochemicalSocietyView the article online for updates and enhancements.You may also like",
+            {
+                "entities": [
+                    [
+                        57,
+                        63,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        180,
+                        192,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Pulsed Laser Deposition andCharacterization of Crystalline LithiumCobalt Dioxide ( LiCoO2 ) Thin FilmsJ. D. Perkins, C. S. Bahn, J. M. McGraw etal.-This content was downloaded from IP address 65.39.15.37 on 23/07/2024 at 16:30Preparation and ElectrochemicalProperties of Stoichiometric andNonstoichiometric LiCox Mn2 x O 4 Zhixing Wang, Hiromasa Ikuta, YoshiharuUchimoto et al.-A688",
+            {
+                "entities": [
+                    [
+                        83,
+                        89,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Journal of The Electrochemical Society, 149 ~6! A688-A693 ~2002! 0013-4651/2002/149~6!/A688/6/$7.00 © The Electrochemical Society, Inc.All-Solid-State Lithium Battery with LiCo0.3Ni0.7O2 Fine Powder as Cathode Materials with an Amorphous Sulﬁde ElectrolyteN. Machida,a,b,z H. Maeda,b H. Peng,b and T. Shigematsua,baKonan High Technology Research Center and bDepartment of Chemistry, Konan University, Higashinada-ku, Kobe 658-8501, Japan",
+            {
+                "entities": [
+                    [
+                        172,
+                        186,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "An all-solid-state battery was fabricated with LiCo0.3Ni0.7O2 ﬁne powder as cathode materials. The LiCo0.3Ni0.7O2 ﬁne powder was synthesized with oxalate decomposition methods and the average particle size of the powder was 2 mm diam. In the all-solid-state battery, a-60Li2S (cid:149) 40SiS2 powder, which was prepared by a mechanical milling process, was used as the solid electrolyte. The anode was metallic indium foil 0.127 mm thick. The charge-discharge cycling test of the battery was carried",
+            {
+                "entities": [
+                    [
+                        47,
+                        61,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        99,
+                        113,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        271,
+                        292,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Since Kennedy et al. reported that the melt-quenched glasses in the Li2S-SiS2 system showed high lithium-ion conductivity in the range 1023 to 1026 S cm21 at room temperature,21-26 silicon sulﬁde- based glasses have been studied extensively in an effort to improve their ion-conducting properties and electrochemical stabilities. Kondo et al. reported that Li3PO4-doped Li2S-SiS2 glasses had high lithium-ion conductivity more than 1023 S cm21 at room tempera- ture and wide electrochemical window",
+            {
+                "entities": [
+                    [
+                        68,
+                        77,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        135,
+                        153,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        357,
+                        369,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        370,
+                        379,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        432,
+                        442,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        [
+            "more than 10 V against Li metal.27-29 In addition, they reported9-12 several types of solid-state lithium cells with the glassy electrolytes system Li3PO4-Li2S-SiS2 .",
+            {
+                "entities": [
+                    [
+                        148,
+                        164,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Minami and Tatsumisago investigated comprehensively the dop- ing effects of several kinds of lithium oxosalts into the Li2S-SiS2 glasses on electrochemical properties, thermal stability, and struc- tural changes of the glasses.30-38 They also suggested that high- energy ballmilling, in which mechanical forces progress chemical reactions, was a very convenient way to get amorphous Li2S-SiS2 ﬁne powders.39,40 According to their reports,39,40 the amorphous ~mol %! powder with average particle size",
+            {
+                "entities": [
+                    [
+                        119,
+                        128,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        383,
+                        392,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            ";2 mm 60Li2S(cid:149)40SiS2 can be synthesized by the high-energy ballmilling process, and the obtained samples show high ion conductivity in the range 1023 to 1024 S cm21 at room temperature.",
+            {
+                "entities": [
+                    [
+                        8,
+                        27,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        152,
+                        170,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "an a-NaFeO2-type structure the same as well-known LiCoO2 , are re- ported to have high structural stability against overcharge more than the LiCoO2 . The LiyCoO2 shows an irreversible phase transition to monoclinic at about y 5 0.55.54-57 The from hexagonal LiyCo0.3Ni0.7O2 solid solution is reported to be stable against the phase transition up to y 5 0.3. Furthermore, speciﬁc capacities of the LiCo0.3Ni0.7O2 are larger than that of LiCoO2 . 41-53The LiyCo0.3Ni0.7O2",
+            {
+                "entities": [
+                    [
+                        50,
+                        56,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        141,
+                        147,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        154,
+                        161,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        248,
+                        257,
+                        "STRUCTURE"
+                    ],
+                    [
+                        258,
+                        273,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        397,
+                        411,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        436,
+                        442,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        454,
+                        469,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Figure 2. Schematic diagram of the all-solid-state battery with a- ~mol %! inorganic solid electrolytes. The cathode was a mix- 60Li2S(cid:149)40SiS2 ture of LiCo0.3Ni0.7O2 ﬁne powder ~59 wt %!, the solid electrolytes ~39 wt %!, and acetylene black powders ~2 wt %!.",
+            {
+                "entities": [
+                    [
+                        130,
+                        149,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        158,
+                        172,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "In this study, we applied oxalate decomposition methods to the preparation of LiCo0.3Ni0.7O2 ﬁne powders, and fabricated solid- state lithium cells with the obtained LiCo0.3Ni0.7O2 ﬁne powders as ~mol cathode materials. We also tried to prepare a-60Li2S(cid:149)40SiS2 %! lithium-ion conductor by the high-energy ballmilling process and to use the ballmilled sample as the solid electrolyte of solid-state batteries.Experimental",
+            {
+                "entities": [
+                    [
+                        78,
+                        92,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        166,
+                        180,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        249,
+                        268,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "Lithium cobalt nickel oxides.—LiOH(cid:149)H2O, CoC2O4(cid:149)2H2O, and NiC2O4(cid:149)2H2O were used as starting materials for preparation of the LiCo0.3Ni0.7O2 solid solutions. Desired amounts of the starting ma- terials were weighed and mixed by use of a ballmilling apparatus for 2 h at room temperature. Total weight of the starting materials was 3 g. During the ballmilling, H2O2 of 2 mL was added to the mixture to oxidize the transition metal ions Co21 and Ni21 into Co31 and Ni31,",
+            {
+                "entities": [
+                    [
+                        148,
+                        162,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "respectively. The mixture was dried under vacuum for 1 h and the obtained dry powders were used as the precursor for the prepa- ration of LiCo0.3Ni0.7O2 ﬁne powders. Heat-treatment of the precur- sor for 2 h at 800°C in O2 atmosphere gave the LiCo0.3Ni0.7O2 powder samples. The obtained samples were characterized by X-ray diffraction ~XRD, Rigaku, RINT-2000! with Cu Ka radiation. The morphologies of samples were examined by using a scanning elec- tron microscope ~SEM, Hitachi, FEM-4500!.",
+            {
+                "entities": [
+                    [
+                        138,
+                        152,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        243,
+                        257,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Electrochemical properties of solid electrolytes.—The ballmilled ~mol %! sample powder was pressed into a 10 mma-60Li2S(cid:149)40SiS2diam pellet and nickel electrodes were attached on both sides of the pellet for electrical conductivity measurements. AC conductivity was measured in dry Ar atmosphere from 20 Hz to 1 MHz using an impedance meter ~Hewlett-Packard, HP-4284A! and the conductiv- ity was determined by employing complex impedance analysis.",
+            {
+                "entities": [
+                    [
+                        115,
+                        134,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        [
+            "Charge-discharge properties of solid-state batteries.—Figure 2 shows the schematic diagram of the solid-state cell used for inves- tigating electrochemical properties of the LiCo0.3Ni0.7O2 sample. In this solid-state cell, the a-60Li2S(cid:149)40SiS2 powder prepared by the mechanical milling process was used as the solid electrolyte. The cathode was a mixture of the LiCo0.3Ni0.7O2 sample ~59 wt %!, the a-60Li2S(cid:149)40SiS2 solid electrolyte ~39 wt %!, and acetylene black powders ~2 wt %!.",
+            {
+                "entities": [
+                    [
+                        174,
+                        188,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        231,
+                        250,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        369,
+                        383,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        410,
+                        429,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "A689A690Journal of The Electrochemical Society, 149 ~6! A688-A693 ~2002!Figure 4. Cyclic votammogram of the 30 h ballmilled 60Li2S(cid:149)40SiS2 %! sample at a scan rate 1 mV s21.",
+            {
+                "entities": [
+                    [
+                        126,
+                        145,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "~mol Figure 3. DC polarization curves of the 30 h ballmilled 60Li2S40SiS2 %! sample: the ~A! cell had two lithium electrodes working as reversible electrodes and ~B! cell had one lithium electrode and one nickel electrode working as a blocking electrode. The applied voltage was 0.5 V.dry Ar gas. The galvanostatic charge-discharge experiment was per- formed between 2.0 and 3.8 V at room temperature by use of a battery tester ~Hokuto, HJR-110mSM6!.Results and Discussion",
+            {
+                "entities": [
+                    [
+                        63,
+                        73,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "milling process.—XRD measurements conﬁrmed that the samples ball- milled more than 30 h at room temperature were in an amorphous state. AC conductivity measurements suggested that the 30 h ball- milled sample had a high conductivity 1.8 3 1024 S cm21 at room temperature.Solidelectrolytespreparedbymechanical",
+            {
+                "entities": [
+                    [
+                        233,
+                        250,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Figure 4 shows the cyclic voltammogram of the 30 h ballmilled 60Li2S(cid:149)40SiS2 sample at a scan rate of 1 mV s21. The initial voltage of the test cell is 1.9 V vs. Li/Li1 electrode. In the ﬁrst step, the potential of the cell is cathodically swept to 20.5 V. A cathodic current peak is observed below 0 V during this sweep. The current corresponds to the deposition of metallic lithium on the nickel work- ing electrode. After that the direction of the voltage sweep is re- versed and the",
+            {
+                "entities": [
+                    [
+                        64,
+                        83,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "voltage is anodically swept until 10 V vs. Li/Li1 electrode. During the anodic sweep, an anodic current peak is ob- served at around 10.3 V, and the anodic peak is attributed to the dissolution of the lithium metal that has deposited on the working electrode during the cathodic sweep. The ratio of the area of the anodic peak to that of the cathodic peak is 0.99. The results suggest that the ballmilled a-60Li2S(cid:149)40SiS2 sample has superior reversibil- ity of the deposition and dissolution",
+            {
+                "entities": [
+                    [
+                        409,
+                        428,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "electrolytes for lithium batteries. Hence, the results shown conclude that the 60Li2S(cid:149)40SiS2 sample prepared by the ballmilling process has sufﬁcient electrochemical properties for use as a solid electrolyte for all-solid-state batteries.",
+            {
+                "entities": [
+                    [
+                        81,
+                        100,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "B. For cell A a small polarization is observed for a very short period after the voltage is applied. After a little polarization at constant current more than 0.95 mA is observed while the voltage is applied. The dc conductivity is calculated to be 1.3 3 1024 S cm21 at room temperature from the observed current and the applied voltage. This dc conductivity is almost the same as the ac conductivity 1.8 3 1024 S cm21 mentioned previously. The difference between the dc and ac conductivities is",
+            {
+                "entities": [
+                    [
+                        255,
+                        266,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        407,
+                        418,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Preparation of LiCo0.3Ni0.7O2 ﬁne powder.—XRD measure- ments conﬁrmed that the LiCo0.3Ni0.7O2 powder prepared by oxalate decomposition has the layered a-NaFeO2-type structure with P3¯ m symmetry. The lattice constants of the obtained LiCo0.3Ni0.7O2 sample are a 5 2.863I and c 5 14.163I and are well agreed with the reported values in some literature.42-45,52",
+            {
+                "entities": [
+                    [
+                        15,
+                        29,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        79,
+                        93,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        180,
+                        185,
+                        "STRUCTURE"
+                    ],
+                    [
+                        234,
+                        248,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Figure 5 shows the SEM image of the LiCo0.3Ni0.7O2 sample. This image suggests that the particles of the obtained sample have hexagonal shapes and 1-2 mm diam as the average particle size. The average particle size is comparable to that of the solid electrolyte a-60Li2S(cid:149)40SiS2 (mol %) prepared by the ballmilling process.39,40 Consequently, the obtained LiCo0.3Ni0.7O2 powder seems to be suf- ﬁciently ﬁne as electrode materials for solid-state batteries.",
+            {
+                "entities": [
+                    [
+                        36,
+                        50,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        266,
+                        285,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        363,
+                        377,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "X-ray microprobe analysis with energy-dispersive spectroscopy ~EDX! was carried out for the obtained sample to determine the~molJournal of The Electrochemical Society, 149 ~6! A688-A693 ~2002!Figure 5. SEM image of the LiCo0.3Ni0.7O2 ﬁne powders that were obtained by the oxalate decomposition methods at 800°C for 2 h. The ﬁve spots 1-5 for the EDX analysis are shown with white squares.",
+            {
+                "entities": [
+                    [
+                        219,
+                        233,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Figure 6. Charge-discharge cycle curves of the all-solid-state cell. The cur- rent density of the charge-discharge measurements was 64 mA cm22.",
+            {
+                "entities": [
+                    [
+                        132,
+                        141,
+                        "DENSITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "~Fig. 7b!, the diffraction peak ~003! is shifted to a lower angle, and the peaks ~108! and ~110! are split well compared to the patterns of as-prepared LiCo0.3Ni0.7O2 sample. Those peak shifts are caused by the delithiation from the LiCo0.3Ni0.7O2 sample. On the other hand, in the X-ray pattern of the discharged sample ~Fig. 7c! the diffrac- tion peak ~003! is shifted back to the higher angle, and the ~108! and ~110! peaks converge. In both patterns b and c there are no peaks attributed to the",
+            {
+                "entities": [
+                    [
+                        152,
+                        166,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        233,
+                        247,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "as-prepared LiCo0.3Ni0.7O2 sample. Those results indicate that all particles of the cathode materials play a part",
+            {
+                "entities": [
+                    [
+                        12,
+                        26,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Charge-discharge properties of solid-state batteries.—An all- solid-state battery has been fabricated with the LiCo0.3Ni0.7O2 sample, and the charge-discharge cycling test of the battery has been carried out under a constant current density of 64 mA cm22 ~C/30 in C-rate!. In this test charge-discharge criteria of voltage are set 3.8 and 2.0 V, respectively. Figure 6 shows the charge-discharge cycle behaviors of the solid-state cell with the LiCo0.3Ni0.7O2 as cathode material. While the second",
+            {
+                "entities": [
+                    [
+                        111,
+                        125,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        244,
+                        251,
+                        "DENSITY"
+                    ],
+                    [
+                        445,
+                        459,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "In order to observe structural change of the LiCo0.3Ni0.7O2 sample during charge and discharge, XRD measurements were car- ried out for the cathode samples after charge and discharge. Figure 7 shows the XRD patterns of the LiCo0.3Ni0.7O2 after ﬁrst charge ~Fig. 7b! and after ﬁrst discharge ~Fig. 7c!. In the ﬁgure, the pattern of as-prepared LiCo0.3Ni0.7O2 powder is ~Fig. 7a! is also shown for the charged and discharged comparison. The compositions of samples Li0.53Co0.3Ni0.7O2 be to and",
+            {
+                "entities": [
+                    [
+                        45,
+                        59,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        223,
+                        237,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        343,
+                        357,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        463,
+                        481,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Li0.89Co0.3Ni0.7O2 , respectively, from the charge and discharge ca- pacities with a coulometric equation. In Fig. 7b and c weak halo patterns are observed at around 2u 5 28°. Those halo patterns are attributed to a-60Li2S(cid:149)40SiS2 samples used as solid electrolytes of the solid-state batteries. In the X-ray patterns of the charged sample",
+            {
+                "entities": [
+                    [
+                        0,
+                        18,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        218,
+                        237,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "arecalculatedTable I. EDX analysis results of the LiCo0.3Ni0.7O2 ﬁne powders prepared by oxalate decomposition methods.aCo ~atom %!Ni ~atom %!1 2 3 4 5 Average30.7 30.5 30.3 30.9 31.0 30.669.3 69.5 69.7 69.1 69.0 69.4a See text for detailed descriptions.Figure 7. XRD patterns of the LiCo0.3Ni0.7O2 powders: ~a! before electro- chemical measurements, ~b! after ﬁrst charge, and ~c! after ﬁrst discharge.A691A692",
+            {
+                "entities": [
+                    [
+                        50,
+                        64,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        284,
+                        298,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "prepared by oxalate decomposition methods at 800°C for 2 h. The a-60Li2S(cid:149)40SiS2 solid electrolyte showed high lithium-ion conduc- tivity 1.8 3 1024 S cm21 at room temperature and also showed high electrochemical stability. The LiCo0.3Ni0.7O2 powder obtained by oxalate decomposition had ﬁne particle size 2 mm in diameter. The all-solid-state battery was fabricated with those materials and with indium foil as anode materials. The battery was prepared by successively pressing the cathode,",
+            {
+                "entities": [
+                    [
+                        64,
+                        87,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        151,
+                        162,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        235,
+                        249,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "the solid electrolytes, and the anode at 300 MPa into a pellet of 10 mm diam. The battery showed good charge-discharge reversibility. The speciﬁc rechargeable ca- pacity of the LiCo0.3Ni0.7O2 powder was about 98 mAh g21 in the solid-state battery. The charge-discharge efﬁciency was almost unity after the second cycle for the all-solid-state battery.",
+            {
+                "entities": [
+                    [
+                        177,
+                        191,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "Figure 8. Cycle dependence of ~a! the speciﬁc capacities and ~b! the charge- discharge cycle efﬁciency of the all-solid-state battery with LiCo0.3Ni0.7O2 obtained by the oxalate decomposition methods. The charge-discharge cy- cling test was carried out under a constant current density of 64 mA cm22 and cutoff voltages of 3.8 and 2.0 V.",
+            {
+                "entities": [
+                    [
+                        139,
+                        153,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        289,
+                        299,
+                        "DENSITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "in electrochemical reactions and that the mixing of cathode materi- als, solid electrolytes, and acetylene black in the composite elec- trode is thoroughly homogeneous. Consequently, the LiCo0.3Ni0.7O2 powder prepared by oxalate decomposition has sufﬁciently ﬁne par- ticle size for all-solid-state batteries.14. K. M. Abraham, V. R. Koch, and T. J. Blakley, J. Electrochem. Soc., 147, 1251 ~2000!.15. M. Kono, E. Hayashi, M. Nishira, and M. Watanabe, J. Electrochem. Soc., 147, 2517 ~2000!.",
+            {
+                "entities": [
+                    [
+                        187,
+                        201,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Figure 8a shows a cycle dependence of the speciﬁc capacities of the all-solid-state battery with LiCo0.3Ni0.7O2 sample prepared by the oxalate decomposition method. After the second cycle the LiCo0.3Ni0.7O2 powder continues to have a speciﬁc capacity of more than 98 mAh g21.19. E. Tsuchida, H. Ohno, and T. Tsunemi, Electrochim. Acta, 28, 591 ~1983!. 20. C. H. Kim, H. T. Kim, J. K. Park, S. I. Moon, and M. S. Yoon, J. Polym. Sci., Part B: Polym. Phys., 66, 105 ~1993!.",
+            {
+                "entities": [
+                    [
+                        97,
+                        111,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        192,
+                        206,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "21. J. H. Kennedy and Y. Yang, J. Electrochem. Soc., 133, 2437 ~1986!. 22. J. H. Kennedy, S. Sahami, S. W. Shea, and Z. Zhang, Solid State Ionics, 18(cid:213)19, 368 ~1986!.the battery with LiCo0.3Ni0.7O2 is shown in Fig. 8b. The efﬁciency has been calcu- lated from the ratio of the discharge capacity to the charge capacity. The charge-discharge efﬁciency is almost unity after the second cycle.The charge-discharge cycle efﬁciency of",
+            {
+                "entities": [
+                    [
+                        190,
+                        204,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "These results suggest that the LiCo0.3Ni0.7O2 ﬁne powders ob- tained by the oxalate decomposition methods have good electro- chemical properties as cathode materials for all-solid-state lithium batteries.",
+            {
+                "entities": [
+                    [
+                        31,
+                        45,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "For the purpose of fabricating all-solid-state lithium batteries a- with inorganic 60Li2S(cid:149)40SiS2 (mol %) was prepared by mechanical milling meth- ods and the cathode materials LiCo0.3Ni0.7O2 ﬁne powders weresolid electrolytes,thesolid electrolyte33. M. Tatsumisago, K. Hirai, T. Hirata, M. Takahashi, and T. Minami, Solid State Ionics, 86-88, 487 ~1996!.34. K. Hirai, M. Tatsumisago, M. Takahashi, and T. Minami, J. Am. Ceram. Soc., 79, 349 ~1996!.",
+            {
+                "entities": [
+                    [
+                        83,
+                        104,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        184,
+                        198,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ]
+    ]
+}

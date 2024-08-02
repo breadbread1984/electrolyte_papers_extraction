@@ -1,0 +1,225 @@
+{
+    "classes": [
+        "SULFIDE_ELECTROLYTE",
+        "IONIC_CONDUCTIVITY",
+        "ELECTROCHEMICAL_STABILITY_WINDOW",
+        "MECHANICAL_STRENGTH",
+        "YOUNGS_MODULUS",
+        "DENSITY",
+        "STRUCTURE"
+    ],
+    "annotations": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "diffusing ions and vacant hopping sites. Doping also introduces local structure distortion, which disturbs the ion packing and removes the degeneracy of hopping barriers.[3, 14] For instance, heavily doped sulfide electrolytes, such as the Li9.54Si1.74P1.44S11.7Cl0.3[11], the Li9.54 [Si0.6Ge0.4]1.74P1.44S11.1Br0.3O0.6[7], etc., achieve much higher ion conductivity than their base compounds. Therefore, material optimization with doping engineering is an important strategy towards",
+            {
+                "entities": [
+                    [
+                        240,
+                        267,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        277,
+                        319,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Figure 1 provides a graphical representation of the training sets for DPA-SSE model. The training sets include three major types of sulfides electrolytes, namely, the LGPS-like compounds (Li10XY2S12; X=Ge, Sn, Si; Y=P, Ga, Sb, As), argyrodites (Li6PS5X; X=Cl, Br, I) and Li7P3S11. For solid batteries, the ability to operate at elevated temperatures is highly desirable, and MD simulations provide critical information regarding thermal stability of solid electrolytes. To this end, decomposition",
+            {
+                "entities": [
+                    [
+                        188,
+                        198,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        245,
+                        252,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "typical sulfide electrolytes, Li10XP2S12 (X=Ge,Sn,Si) and Li6PS5X (X=Cl,Br,I). Both M3GNET and CHGNET perform reasonably well near equilibrium positions, as shown in Figure S1. However, DPA-SSE significantly outperforms other universal force fields on a long heating DeePMD trajectory from 150 to 1150 K, which includes extensive out-of-equilibrium configurations. The results are plotted in Figure 2c and d for energy and force prediction, respectively. A more detailed comparison of energy",
+            {
+                "entities": [
+                    [
+                        30,
+                        40,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        58,
+                        65,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "Figure 3: Transferability to solid solutions. Mean absolute error and error distribution of (a) energy and (b) forces of Li10Ge1−x−ySnxSiyP2S12 (LXPS) and Li6PS5Cl1−x−yBrxIy (LPSX) solid solutions. These compounds are not present in the training sets. (c) The t-distributed stochastic neighbor embedding (t-SNE) representation of the training set and the test sets for solid solutions. The t-SNE plot measures the similarity of two data points by their relative distance in a 2-dimension plane.",
+            {
+                "entities": [
+                    [
+                        121,
+                        143,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        155,
+                        173,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "As mentioned in previous sections, chemical doping is a key strategy for electrolyte optimization, and atomistic simulations capable of predicting doped electrolytes may provide crucial guidance. Model transferability is essential here as no training set can cover the vast configuration space of solid solutions and doped compounds. To check the transferability of DPA-SSE, Li10(Ge, Sn, Si)P2S12 (L(Ge, Sn, Si)PS) and Li6PS5(Cl, Br, I) (LPS(Cl, Br, I)) solid solutions with random mixes of cation",
+            {
+                "entities": [
+                    [
+                        419,
+                        425,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        [
+            "As well as accurate \"zero-shot\" prediction for materials with complex composition, a transferable model easily adapts to downstream tasks by model fine-tuning, which requires much less training data than training from scratch. Here, we showcase the model fine-tuning with DPA-SSE. 800 snapshots of a Li2B2S5 (mp-29410, denoted as LBS) compound, which is not included in the training set (Figure S4), are collected from the DP-GEN workflow as downstream data set[36]. The test set is constructed by",
+            {
+                "entities": [
+                    [
+                        300,
+                        307,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "6Deep Potentials for Sulfide ElectrolytesFigure 4: Efficiency of model finetuning. The (a) energy and (b) force prediction of L2B2S5 (mp-29410) systems before and after the model finetuning with 20 frames. The comparative sample efficiency on downstream task of finetuning and from-scratch training. (c) energy and (d) force prediction mean absolution error with the number of data frames.3.4 Nudged elastic band calculation and dynamic simulations",
+            {
+                "entities": [
+                    [
+                        126,
+                        132,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Figure 5: Nudged elastic band (NEB) calculation of concerted Li transport in Li10GeP2S12 (LGPS) electrolytes. Hopping barrier of (a) the concerted Li+ ion motion along the c-axis and (b) the Li+ ion diffusion with a kick-off mechanism in the ab-plane of LGPS electrolyte. The relative energies of frames along the hopping pathway are also predicted using DFT calculation as well as other universal force fields. Evidently, the predictions by DPA-SSE are more accurate than other force fields, which",
+            {
+                "entities": [
+                    [
+                        77,
+                        88,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        [
+            "Figure 6: Molecular dynamic simulation of lithium ion transport in sulfide electrolytes. (a) Experimental and calculated room temperature ion conductivity of Li10SixGe1−xP2S12 solid solution at various concentrations. (b) The time evolution of lithium ion mean square displacement (MSD) for Li6PSCl5 in ordered and disordered anion-site configurations, the potential energy of the two configurations are also plotted. Experimental and calculated room temperature (c) ion conductivity and (d) hopping",
+            {
+                "entities": [
+                    [
+                        158,
+                        175,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        291,
+                        299,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "The ion transport of sulfide electrolytes can be modified by doping. Figure 6a plots the room temperature ion conductivity of Li10(SixGe1−x)P2S12 solid solutions using DPA-SSE model. The result agrees reasonably well with experiment measurements. Even without external doping, there might be intrinsic disorder in the electrolyte materials which plays a key role in ion transport. The Li+ ion transport in LPSX(X=Cl, Br, I) argyrodite electrolyte has been attributed to the S2−/X− anion site",
+            {
+                "entities": [
+                    [
+                        126,
+                        145,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ]
+    ]
+}

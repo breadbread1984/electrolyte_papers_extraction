@@ -1,0 +1,143 @@
+{
+    "classes": [
+        "SULFIDE_ELECTROLYTE",
+        "IONIC_CONDUCTIVITY",
+        "ELECTROCHEMICAL_STABILITY_WINDOW",
+        "MECHANICAL_STRENGTH",
+        "YOUNGS_MODULUS",
+        "DENSITY",
+        "STRUCTURE"
+    ],
+    "annotations": [
+        null,
+        null,
+        [
+            "ABSTRACT: Thin-film solid electrolytes with wide electrochemical stability windows are required to develop solid-state lithium (Li) metal batteries with high energy densities. In this work, free-standing Li3InCl6 (30 μm)|Li6PS5Cl (30 μm) bilayer thin films are prepared by slurry casting, drying, and lamination. This combination of solid electrolytes is stable at both the cathode interface (high voltages) and anode interface (low voltages). The bilayer thin films exhibit >10× lower area-specific",
+            {
+                "entities": [
+                    [
+                        204,
+                        212,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        220,
+                        229,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "resistance than thick (∼1 mm) pellets fabricated by traditional powder pressing. The free-standing bilayer electro- lytes are laminated onto electrodeposited LiCoO2 cathodes. Subsequently a Li−In anode is laminated on top of the stack, and stable cycling of all-solid- state batteries is demonstrated. Because of reduced ohmic losses, cells fabricated with thin-film electrolytes exhibit lower cell polarization and improved rate capability compared with cells with a traditional pellet geometry.",
+            {
+                "entities": [
+                    [
+                        158,
+                        164,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "electrolytes to decouple the anode and cathode stabilities.10−13 However, while polymer SEs present a possible pathway to scalable manufacturing, ionic conductivities (10−2−10−5 mS/cm) than state-of-the art ceramic SEs (101−10−1 mS/cm), especially at low temper- atures.14−16",
+            {
+                "entities": [
+                    [
+                        168,
+                        183,
+                        "IONIC_CONDUCTIVITY"
+                    ],
+                    [
+                        220,
+                        234,
+                        "IONIC_CONDUCTIVITY"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        [
+            "challenging for ceramic SEs because of their brittle mechanical properties and the propensity for defects when fabricating large-scale, thin sheets. As a result, much of the published literature on SSBs with ceramic SEs has used thick pellets (>500 μm) and small cell areas (≤13 mm diameter).3−8 However, to enable energy densities >300 Wh/kg using a LiNi0.8Mn0.1Co0.1O2 (NMC811) composite cathode (3 mAh/ cm2) and a Li metal anode, the thickness of the SE should be <90 μm for sulfide SEs, and even",
+            {
+                "entities": [
+                    [
+                        351,
+                        370,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        [
+            "thinner films (<30 μm) are needed for state-of-the-art oxide SEs (e.g., Li7La3Zr2O12).9",
+            {
+                "entities": [
+                    [
+                        72,
+                        84,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        [
+            "In this study, we fabricated thin-film bilayers of Li3InCl6 (LIC) and Li6PS5Cl (LPSCl) using slurry casting and lamination methods in a commercially relevant dry room environment (dew point: −60 °C).27 LIC has been reported to be stable at potentials >4 V vs Li/Li+, which makes it compatible with high-voltage cathodes,28 and LPSCl forms a kinetically stable interface with Li metal anodes after the formation of a thin SEI (solid electrolyte interphase) layer.29,30 Furthermore, the LIC|LPSCl",
+            {
+                "entities": [
+                    [
+                        51,
+                        59,
+                        "SULFIDE_ELECTROLYTE"
+                    ],
+                    [
+                        70,
+                        78,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        [
+            "Using this approach, we demonstrate the fabrication of dense, pinhole-free bilayer SEs consisting of LIC (30 μm)| LPSCl (30 μm). Because of their reduced thickness, the bilayer SEs exhibit an area-specific resistance (ASR) one order of magnitude lower than the same bilayer composition fabricated in a pellet geometry with a thickness of 1 mm. SSBs were fabricated by laminating the free-standing SE bilayer onto a LiCoO2 (LCO) cathode and Li−In alloy anode. As a result of their lower ASR, cells",
+            {
+                "entities": [
+                    [
+                        415,
+                        421,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ],
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+            "Following published procedures, the LIC film was annealed in an Ar environment after casting to remove undesirable hydrated surface species (Li3InCl6·xH2O).40 The casted films were stacked on top of each other and laminated under 100 MPa pressure for 10 s at room temperature (Scheme 1b). The substrates were subsequently peeled off from the bilayer film to",
+            {
+                "entities": [
+                    [
+                        141,
+                        154,
+                        "SULFIDE_ELECTROLYTE"
+                    ]
+                ]
+            }
+        ]
+    ]
+}
