@@ -71,6 +71,10 @@ to
 python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-cased --train_file <path/to/trainset.json> --validation_file <path/to/valset.json> --output_dir <path/to/ckpt> --do_train --do_eval --overwrite_output_dir --num_train_epochs 10
 ```
 
+| model | pretrained checkpoint |
+|-------|-----------------------|
+| Bert  | https://drive.google.com/file/d/1aEMB5jLUwokS77-SeyHzTjRT6h55ndy8/view?usp=drive_link |
+
 ## Test model
 
 ### Test Bert+CRF with Adaseq
