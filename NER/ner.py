@@ -95,17 +95,25 @@ class NER(object):
     return entities
 
 class PDFNER(NER):
-  def __init__(self, ckpt, device = 'gpu', chunk_size = 500, chunk_overlap = 0):
+  def __init__(self, ckpt, device = 'gpu', chunk_size = 300, chunk_overlap = 0):
     super(PDFNER, self).__init__(ckpt, device)
     self.splitter = RecursiveCharacterTextSplitter(chunk_size = chunk_size, chunk_overlap = chunk_overlap)
   def process(self, pdf):
+    metadata = dict()
     stem, ext = splitext(basename(pdf))
+    metadata['filename'] = stem
+    metadata['sentences'] = list()
     if ext != '.pdf': raise Exception('it is not a pdf file!')
     loader = UnstructuredPDFLoader(pdf, mode = 'single')
     docs = loader.load()
     sentences = [sentence.page_content for sentence in self.splitter.split_documents(docs)]
     for sentence in sentences:
-      results = self.pipeline(sentence)
+      sentence_metadata = dict()
+      sentence_metadata['text'] = sentence
+      entities = self.pipeline(sentence)
+      sentence_metadata['entities'] = entities
+      metadata['sentences'].append(sentence_metadata)
+    return metadata
 
 if __name__ == "__main__":
   ner = NER('hf_ckpt', framework = 'huggingface', device = 'gpu')
