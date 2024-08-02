@@ -1,15 +1,21 @@
 #!/usr/bin/python3
 
 from os.path import abspath, splitext, basename
-from modelscope.pipelines import pipeline
+import modelscope
+import transformers
+from transformers import AutoTokenizer
 from modelscope.utils.constant import Tasks
 from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class NER(object):
-  def __init__(self, ckpt, device = 'gpu'):
+  def __init__(self, ckpt, framework = 'huggingface', device = 'gpu'):
     assert device in {'gpu', 'cpu'}
-    self.pipeline = pipeline(Tasks.named_entity_recognition, abspath(ckpt), device = device)
+    assert framework in {'huggingface', 'adaseq'}
+    if framework == 'adaseq':
+      self.pipeline = modelscope.pipelines.pipeline(Tasks.named_entity_recognition, abspath(ckpt), device = device)
+    elif framework == 'huggingface':
+      self.pipeline = transformers.pipeline('ner', ckpt, tokenizer = AutoTokenizer.from_pretrained('google-bert/bert-base-cased'))
   def process(self, text):
     results = self.pipeline(text)
     return results
@@ -30,3 +36,4 @@ class PDFNER(NER):
 if __name__ == "__main__":
   ner = NER('ckpt', device = 'gpu')
   results = ner.process('')
+  import pdb; pdb.set_trace()
