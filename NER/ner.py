@@ -21,6 +21,7 @@ class NER(object):
     tokens = self.pipeline(text)
     status = 'none-appendable'
     for token in tokens:
+      if token['word'].startswith('##'): token['word'] = token['word'][2:]
       if status == 'none-appendable':
         entities.append({
           'entity': token['entity'][2:],
