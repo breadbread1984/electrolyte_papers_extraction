@@ -45,15 +45,7 @@ class NER(object):
               'end': token['end']
             })
             status = 'none-appendable'
-          elif token['entity'][:2] == 'B-':
-            entities.append({
-              'entity': token['entity'][2:],
-              'value': token['word'],
-              'start': token['start'],
-              'end': token['end']
-            })
-            status = 'appendable'
-          elif token['entity'][:2] == 'I-':
+          elif token['entity'][:2] in {'B-', 'I-'}:
             # appendable token
             if entities[-1]['end'] == token['start'] or \
                entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' ':
