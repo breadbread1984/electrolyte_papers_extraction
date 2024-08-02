@@ -17,8 +17,87 @@ class NER(object):
     elif framework == 'huggingface':
       self.pipeline = transformers.pipeline('ner', ckpt, tokenizer = AutoTokenizer.from_pretrained('google-bert/bert-base-cased'))
   def process(self, text):
-    results = self.pipeline(text)
-    return results
+    entities = list()
+    tokens = self.pipeline(text)
+    status = 'none-appendable'
+    for token in tokens:
+      if status == 'none-appendable':
+        entities.append({
+          'entity': token['entity'][2:],
+          'value': token['word'],
+          'start': token['start'],
+          'end': token['end']
+        })
+        if token['entity'].startswith('S-') or token['entity'].startswith('E-'):
+          status = 'none-appendable'
+        else:
+          status = 'appendable'
+      else:
+        if entities[-1]['entity'] == token['entity'][2:]:
+          # same type of token
+          if token['entity'][:2] == 'S-':
+            # entity only contains one token
+            entities.append({
+              'entity': token['entity'][2:],
+              'value': token['word'],
+              'start': token['start'],
+              'end': token['end']
+            })
+            status = 'none-appendable'
+          elif token['entity'][:2] == 'B-':
+            entities.append({
+              'entity': token['entity'][2:],
+              'value': token['word'],
+              'start': token['start'],
+              'end': token['end']
+            })
+            status = 'appendable'
+          elif token['entity'][:2] == 'I-':
+            # appendable token
+            if entities[-1]['end'] == token['start']:
+              # positional next to the last token
+              entities[-1]['value'] += token['word']
+              entities[-1]['end'] = token['end']
+              status = 'appendable'
+            else:
+              # positional not continued
+              entities.append({
+                'entity': token['entity'][2:],
+                'value': token['word'],
+                'start': token['start'],
+                'end': token['end']
+              })
+              status = 'appendable'
+          elif token['entity'][:2] == 'E-':
+            # appendable token
+            if entities[-1]['end'] == token['start']:
+              # positional next to the last token
+              entities[-1]['value'] += token['word']
+              entities[-1]['end'] = token['end']
+              status = 'none-appendable'
+            else:
+              # positional not continued
+              entities.append({
+                'entity': token['entity'][2:],
+                'value': token['word'],
+                'start': token['start'],
+                'end': token['end']
+              })
+              status = 'none-appendable'
+          else:
+            raise Exception('unknown condition!')
+        else:
+          entities.append({
+            'entity': token['entity'][2:],
+            'value': token['word'],
+            'start': token['start'],
+            'end': token['end']
+          })
+          if token['entity'][:2] in {'B-','I-'}:
+            status = 'appendable'
+          else:
+            status = 'none-appendable'
+    return entities
 
 class PDFNER(NER):
   def __init__(self, ckpt, device = 'gpu', chunk_size = 500, chunk_overlap = 0):
@@ -34,6 +113,8 @@ class PDFNER(NER):
       results = self.pipeline(sentence)
 
 if __name__ == "__main__":
-  ner = NER('ckpt', device = 'gpu')
-  results = ner.process('')
-  import pdb; pdb.set_trace()
+  ner = NER('hf_ckpt', framework = 'huggingface', device = 'gpu')
+  s = 'In particular, sulfide-based solid electrolytes that possess higher ionic conductivity than that of liquid electrolytes, such as Li9.54Si1.74P1.44S11.7Cl0.3 (2.5 × 10-2 S cm-1), Li6.6Si0.6Sb0.4S5I (2.4 × 10-2 S cm-1) and Li6.7PS5ClBr0.7 (2.4 × 10-2 S cm -1), have been developed[10-12]'
+  results = ner.process(s)
+  print('original text: ', s)
+  print('entities: ', results)
