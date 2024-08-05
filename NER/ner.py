@@ -110,7 +110,7 @@ class PDFNER(NER):
     for sentence in sentences:
       sentence_metadata = dict()
       sentence_metadata['text'] = sentence
-      entities = self.pipeline(sentence)
+      entities = super(PDFNER,self).pipeline(sentence)
       sentence_metadata['entities'] = entities
       metadata['sentences'].append(sentence_metadata)
     return metadata
