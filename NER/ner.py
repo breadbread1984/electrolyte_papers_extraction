@@ -19,7 +19,6 @@ class NER(object):
   def process(self, text):
     entities = list()
     tokens = self.pipeline(text)
-    print(tokens)
     if len(tokens) == 0: return entities
     for idx, token in enumerate(tokens):
       if token['word'].startswith('##'): token['word'] = token['word'][2:]
