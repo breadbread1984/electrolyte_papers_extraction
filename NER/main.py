@@ -2,7 +2,7 @@
 
 from absl import flags, app
 from shutil import rmtree
-import json
+import pickle
 from os import walk, mkdir
 from os.path import splitext, join, exists
 from tqdm import tqdm
@@ -26,8 +26,8 @@ def main(unused_argv):
       stem, ext = splitext(f)
       if ext != '.pdf': continue
       metadata = ner.process(join(root,f))
-      with open(join(FLAGS.output_dir, stem + '.json'), 'w') as f:
-        f.write(json.dumps(metadata, indent = 2, ensure_ascii = False))
+      with open(join(FLAGS.output_dir, stem + '.pkl'), 'wb') as f:
+        f.write(pickle.dumps(metadata))
 
 if __name__ == "__main__":
   add_options()
