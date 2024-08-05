@@ -19,68 +19,23 @@ class NER(object):
   def process(self, text):
     entities = list()
     tokens = self.pipeline(text)
-    status = 'none-appendable'
-    for token in tokens:
+    if len(tokens) == 0: return entities
+    print(tokens)
+    for idx, token in enumerate(tokens):
       if token['word'].startswith('##'): token['word'] = token['word'][2:]
-      if status == 'none-appendable':
+      if idx == 0:
         entities.append({
           'entity': token['entity'][2:],
           'value': token['word'],
           'start': token['start'],
           'end': token['end']
         })
-        if token['entity'].startswith('S-') or token['entity'].startswith('E-'):
-          status = 'none-appendable'
-        else:
-          status = 'appendable'
       else:
-        if entities[-1]['entity'] == token['entity'][2:]:
-          # same type of token
-          if token['entity'][:2] == 'S-':
-            # entity only contains one token
-            entities.append({
-              'entity': token['entity'][2:],
-              'value': token['word'],
-              'start': token['start'],
-              'end': token['end']
-            })
-            status = 'none-appendable'
-          elif token['entity'][:2] in {'B-', 'I-'}:
-            # appendable token
-            if entities[-1]['end'] == token['start'] or \
-               entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' ':
-              # positional next to the last token
-              entities[-1]['value'] += token['word'] if entities[-1]['end'] == token['start'] else (' ' + token['word'])
-              entities[-1]['end'] = token['end']
-              status = 'appendable'
-            else:
-              # positional not continued
-              entities.append({
-                'entity': token['entity'][2:],
-                'value': token['word'],
-                'start': token['start'],
-                'end': token['end']
-              })
-              status = 'appendable'
-          elif token['entity'][:2] == 'E-':
-            # appendable token
-            if entities[-1]['end'] == token['start'] or \
-               entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' ':
-              # positional next to the last token
-              entities[-1]['value'] += token['word'] if entities[-1]['end'] == token['start'] else (' ' + token['word'])
-              entities[-1]['end'] = token['end']
-              status = 'appendable'
-            else:
-              # positional not continued
-              entities.append({
-                'entity': token['entity'][2:],
-                'value': token['word'],
-                'start': token['start'],
-                'end': token['end']
-              })
-              status = 'appendable'
-          else:
-            raise Exception('unknown condition!')
+        if token['entity'][2:] == entities[-1]['entity'] and \
+           (token['start'] == entities[-1]['end'] or \
+            entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' '):
+          entities[-1]['value'] += token['word'] if entities[-1]['end'] == token['start'] else (' ' + token['word'])
+          entities[-1]['end'] = token['end']
         else:
           entities.append({
             'entity': token['entity'][2:],
@@ -88,10 +43,7 @@ class NER(object):
             'start': token['start'],
             'end': token['end']
           })
-          if token['entity'][:2] in {'B-','I-'}:
-            status = 'appendable'
-          else:
-            status = 'none-appendable'
+          
     return entities
 
 class PDFNER(NER):
@@ -116,8 +68,8 @@ class PDFNER(NER):
     return metadata
 
 if __name__ == "__main__":
-  ner = NER('hf_ckpt', framework = 'huggingface', device = 'gpu')
-  s = 'In particular, sulfide-based solid electrolytes that possess higher ionic conductivity than that of liquid electrolytes, such as Li9.54Si1.74P1.44S11.7Cl0.3 (2.5 × 10-2 S cm-1), Li6.6Si0.6Sb0.4S5I (2.4 × 10-2 S cm-1) and Li6.7PS5ClBr0.7 (2.4 × 10-2 S cm -1), have been developed[10-12]'
+  ner = NER('hf_ckpt', framework = 'huggingface', device = 'cuda')
+  s = '[59] ZHU Z, CHU I H, DENG Z, et al. Role of Na+ interstitials and dopants\n\nin enhancing the Na+ conductivity of the cubic Na3PS4 superionic conductor[J]. Chemistry of Materials, 2015, 27(24): 8318-8325.\n\nconductive Na10GeP2S12 glass-ceramic Letters, 2018, 47(1): 13-15.\n\nelectrolytes[J]. Chemistry'
   results = ner.process(s)
   print('original text: ', s)
   print('entities: ', results)
