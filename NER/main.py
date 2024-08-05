@@ -15,7 +15,7 @@ def add_options():
   flags.DEFINE_string('output_dir', default = 'output', help = 'path to output directory')
   flags.DEFINE_string('ckpt', default = None, help = 'path to checkpoint')
   flags.DEFINE_enum('framework', default = 'huggingface', enum_values = {'huggingface', 'adaseq'}, help = 'which framework is used')
-  flags.DEFINE_enum('device', default = 'gpu', enum_values = {'gpu', 'cpu'}, help = 'device')
+  flags.DEFINE_enum('device', default = 'cuda', enum_values = {'cuda', 'cpu'}, help = 'device')
 
 def main(unused_argv):
   if exists(FLAGS.output_dir): rmtree(FLAGS.output_dir)

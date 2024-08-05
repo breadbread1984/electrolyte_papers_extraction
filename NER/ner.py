@@ -9,8 +9,8 @@ from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class NER(object):
-  def __init__(self, ckpt, framework = 'huggingface', device = 'gpu'):
-    assert device in {'gpu', 'cpu'}
+  def __init__(self, ckpt, framework = 'huggingface', device = 'cuda'):
+    assert device in {'cuda', 'cpu'}
     assert framework in {'huggingface', 'adaseq'}
     if framework == 'adaseq':
       self.pipeline = modelscope.pipelines.pipeline(Tasks.named_entity_recognition, abspath(ckpt), device = device)
