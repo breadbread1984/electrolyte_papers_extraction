@@ -32,7 +32,7 @@ class NER(object):
         })
       else:
         if token['entity'][2:] == entities[-1]['entity'] and \
-           (token['start'] == entities[-1]['end'] or token['start'] == entities[-1]['end']):
+           (token['start'] == entities[-1]['end'] or token['start'] == entities[-1]['end'] + 1):
           entities[-1]['end'] = token['end']
           entities[-1]['value'] = text[entities[-1]['start']:entities[-1]['end']]
         else:
