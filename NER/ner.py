@@ -19,6 +19,7 @@ class NER(object):
   def process(self, text):
     entities = list()
     tokens = self.pipeline(text)
+    print(tokens)
     if len(tokens) == 0: return entities
     for idx, token in enumerate(tokens):
       if token['word'].startswith('##'): token['word'] = token['word'][2:]
@@ -31,10 +32,9 @@ class NER(object):
         })
       else:
         if token['entity'][2:] == entities[-1]['entity'] and \
-           (token['start'] == entities[-1]['end'] or \
-            entities[-1]['end'] + 1 == token['start'] and text[entities[-1]['end']] == ' '):
-          entities[-1]['value'] += token['word'] if entities[-1]['end'] == token['start'] else (' ' + token['word'])
+           (token['start'] == entities[-1]['end'] or token['start'] == entities[-1]['end']):
           entities[-1]['end'] = token['end']
+          entities[-1]['value'] = text[entities[-1]['start']:entities[-1]['end']]
         else:
           entities.append({
             'entity': token['entity'][2:],
@@ -68,7 +68,7 @@ class PDFNER(NER):
 
 if __name__ == "__main__":
   ner = NER('hf_ckpt', framework = 'huggingface', device = 'cuda')
-  s = '[59] ZHU Z, CHU I H, DENG Z, et al. Role of Na+ interstitials and dopants\n\nin enhancing the Na+ conductivity of the cubic Na3PS4 superionic conductor[J]. Chemistry of Materials, 2015, 27(24): 8318-8325.\n\nconductive Na10GeP2S12 glass-ceramic Letters, 2018, 47(1): 13-15.\n\nelectrolytes[J]. Chemistry'
+  s = 'was used as electrode ma- terials: a 80Li2Se20P2S5 solid electrolyte with an Li:P molar ratio of 8:2 or a 70Li2Se30P2S5 solid electrolyte with an Li:P molar ratio of 7:3 for the positive-electrode, and a 70Li2Se30P2S5 solid electrolyte for the negative-electrode. The synthetic condition of these'
   results = ner.process(s)
   print('original text: ', s)
   print('entities: ', results)
