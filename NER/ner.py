@@ -15,7 +15,7 @@ class NER(object):
     if framework == 'adaseq':
       self.pipeline = modelscope.pipelines.pipeline(Tasks.named_entity_recognition, abspath(ckpt), device = device)
     elif framework == 'huggingface':
-      self.pipeline = transformers.pipeline('ner', ckpt, tokenizer = AutoTokenizer.from_pretrained('google-bert/bert-base-cased'))
+      self.pipeline = transformers.pipeline('ner', ckpt, tokenizer = AutoTokenizer.from_pretrained('google-bert/bert-base-cased'), device = device)
   def process(self, text):
     entities = list()
     tokens = self.pipeline(text)
