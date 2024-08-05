@@ -27,7 +27,7 @@ def main(unused_argv):
       if ext != '.pdf': continue
       metadata = ner.process(join(root,f))
       with open(join(FLAGS.output_dir, stem + '.json'), 'w') as f:
-        f.write(json.dumps(metadata), indent = 2, ensure_ascii = False)
+        f.write(json.dumps(metadata, indent = 2, ensure_ascii = False))
 
 if __name__ == "__main__":
   add_options()
