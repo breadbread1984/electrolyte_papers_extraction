@@ -30,7 +30,7 @@ for row in total_citation.index:
         if total_citation.at[row, col] > 0:
             G.add_edge(row, col, weight=total_citation.at[row, col])
 
-net = Network(notebook=True)
+net = Network(height="600px", width="100%", notebook=True)
 
 net.from_nx(G)
 
