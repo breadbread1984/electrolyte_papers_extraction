@@ -28,7 +28,7 @@ def link_label_value(label, value):
 def main(unused_argv):
   output = open(FLAGS.output, 'w')
   for label in FLAGS.labels:
-    output.write(add_label(label))
+    output.write(add_label(label) + '\n')
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
       stem, ext = splitext(f)
@@ -38,8 +38,8 @@ def main(unused_argv):
       for sentence in metadata['sentences']:
         if len(sentence['entities']) == 0: continue
         for entity in sentence['entities']:
-          output.write(add_value(entity['value'], metadata['filename']))
-          output.write(link_label_value(entity['entity'], entity['value']))
+          output.write(add_value(entity['value'], metadata['filename']) + '\n')
+          output.write(link_label_value(entity['entity'], entity['value']) + '\n')
   output.close()
 
 if __name__ == "__main__":
