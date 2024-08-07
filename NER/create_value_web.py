@@ -21,7 +21,7 @@ def add_value(value, paper):
   cypher = """merge (a: Value {value: "%s", source: "%s"})""" % (value, paper)
   return cypher
 
-def link_label_vale(label, value):
+def link_label_value(label, value):
   cypher = """match (a: Label {label: "%s"}), (b: Value {value: "%s"}) merge (a)-[:INCLUDES]->(b);""" % (label, value)
   return cypher
 
