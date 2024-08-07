@@ -21,8 +21,8 @@ def add_value(value, paper):
   cypher = """merge (a: Value {value: "%s", source: "%s"})""" % (value, paper)
   return cypher
 
-def link_label_value(label, value):
-  cypher = """match (a: Label {label: "%s"}), (b: Value {value: "%s"}) merge (a)-[:INCLUDES]->(b);""" % (label, value)
+def link_label_value(label, value, paper):
+  cypher = """match (a: Label {label: "%s"}), (b: Value {value: "%s", source: "%s"}) merge (a)-[:INCLUDES]->(b);""" % (label, value, paper)
   return cypher
 
 def main(unused_argv):
@@ -39,7 +39,7 @@ def main(unused_argv):
         if len(sentence['entities']) == 0: continue
         for entity in sentence['entities']:
           output.write(add_value(entity['value'], metadata['filename']) + '\n')
-          output.write(link_label_value(entity['entity'], entity['value']) + '\n')
+          output.write(link_label_value(entity['entity'], entity['value'], metadata['filename']) + '\n')
   output.close()
 
 if __name__ == "__main__":
