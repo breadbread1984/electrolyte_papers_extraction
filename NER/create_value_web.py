@@ -18,7 +18,7 @@ def add_label(label):
   return cypher
 
 def add_value(value, paper):
-  cypher = """merge (a: Value {value: "%s", source: "%s"})""" % (value, paper)
+  cypher = """merge (a: Value {value: "%s", source: "%s"}) return a;""" % (value, paper)
   return cypher
 
 def link_label_value(label, value, paper):
