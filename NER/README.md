@@ -99,3 +99,10 @@ python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-case
 python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|gpu)]
 ```
 
+## Visualize extracted entities in Neo4j
+
+```shell
+python3 create_value_web.py --input_dir <path/to/directory/of/jsons>
+bash run_cypher.sh
+```
+
