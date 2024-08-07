@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import pickle
 import numpy as np
 import networkx as nx
