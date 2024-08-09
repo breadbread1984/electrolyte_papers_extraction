@@ -27,8 +27,11 @@ def main(unused_argv):
     for f in files:
       stem, ext = splitext(f)
       idx = int(stem.split('-')[0])
-      assert paper_list.iloc[idx - 1]['序号'] == idx
-      doi = paper_list.iloc[idx + 1]['DOI'].replace('/','_')
+      if FLAGS.list is not None:
+        assert paper_list.iloc[idx - 1]['序号'] == idx
+        doi = paper_list.iloc[idx + 1]['DOI'].replace('/','_')
+      else:
+        doi = None
       output_name = (str(uuid4()) if (FLAGS.list is None or doi is None or doi == '') else doi) + '.txt'
       if ext.lower() in ['.htm', '.html']:
         loader = UnstructuredHTMLLoader(join(root, f))
