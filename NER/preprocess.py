@@ -30,10 +30,10 @@ def main(unused_argv):
       if FLAGS.list is not None:
         assert paper_list.iloc[idx - 1]['序号'] == idx
         doi = paper_list.iloc[idx - 1]['DOI']
-        doi = doi.replace('/','_') if doi is not None else doi
+        doi = doi.replace('/','_') if type(doi) is str else doi
       else:
         doi = None
-      output_name = (str(uuid4()) if (FLAGS.list is None or doi is None or doi == '') else doi) + '.txt'
+      output_name = (str(uuid4()) if (FLAGS.list is None or type(doi) is not str) else doi) + '.txt'
       if ext.lower() in ['.htm', '.html']:
         loader = UnstructuredHTMLLoader(join(root, f))
       elif ext.lower() == '.txt':
