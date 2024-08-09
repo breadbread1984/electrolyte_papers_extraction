@@ -21,7 +21,7 @@ def add_options():
 def main(unused_argv):
   if exists(FLAGS.output_dir): rmtree(FLAGS.output_dir)
   mkdir(FLAGS.output_dir)
-  paper_list = None if FLAGS.list is None else pd.ExcelFile(FLAGS.list)
+  paper_list = None if FLAGS.list is None else pd.ExcelFile(FLAGS.list).parse(0)
   text_splitter = RecursiveCharacterTextSplitter(chunk_size = FLAGS.length, chunk_overlap = 0)
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
