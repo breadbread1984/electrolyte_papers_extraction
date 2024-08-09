@@ -65,6 +65,10 @@ to
     ]
 ```
 
+| model | pretrained checkpoint |
+|-------|-----------------------|
+| Bert+CRF | https://drive.google.com/file/d/18er_dsBq-u9u2zSb01zh-AHICEyEMv-O/view?usp=drive_link |
+
 ### Train Bert with Huggingface
 
 ```shell
@@ -93,5 +97,12 @@ python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-case
 
 ```shell
 python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|gpu)]
+```
+
+## Visualize extracted entities in Neo4j
+
+```shell
+python3 create_value_web.py --input_dir <path/to/directory/of/jsons>
+bash run_cypher.sh
 ```
 
