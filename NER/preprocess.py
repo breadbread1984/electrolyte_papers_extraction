@@ -29,7 +29,8 @@ def main(unused_argv):
       idx = int(stem.split('-')[0])
       if FLAGS.list is not None:
         assert paper_list.iloc[idx - 1]['序号'] == idx
-        doi = paper_list.iloc[idx + 1]['DOI'].replace('/','_')
+        doi = paper_list.iloc[idx - 1]['DOI']
+        doi = doi.replace('/','_') if doi is not None else doi
       else:
         doi = None
       output_name = (str(uuid4()) if (FLAGS.list is None or doi is None or doi == '') else doi) + '.txt'
