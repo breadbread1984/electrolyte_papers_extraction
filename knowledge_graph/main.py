@@ -39,7 +39,7 @@ def main(unused_argv):
     llm = llm, prompt = prompt,
     #allowed_nodes = ['electrolyte', 'conductivity', 'precursor', 'crystal_system_of_electrolyte', 'space_group_of_electrolyte'],
     #allowed_relationships = ['has_conductivity', 'has_precursor', 'has_crystal_system', 'has_space_group'],
-    node_properties = True, relationship_properties = True
+    #node_properties = True, relationship_properties = True
   )
   neo4j = Neo4jGraph(url = FLAGS.host, username = FLAGS.user, password = FLAGS.password, database = FLAGS.database)
 
