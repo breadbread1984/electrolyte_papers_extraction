@@ -124,6 +124,6 @@ def Qwen2_FA2(locally = False):
     @property
     def _llm_type(self):
       return "qwen2 with flast attention 2"
-  llm = Qwen2_FA2()
+  llm = Qwen2FA2()
   return llm.tokenizer, llm
 
