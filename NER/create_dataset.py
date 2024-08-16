@@ -34,6 +34,7 @@ def main(unused_argv):
       end = e[1]
       entity_tokens = tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(text[begin:end])
       entity_tokens = [(token[0], (token[1][0] + begin, token[1][1] + begin)) for token in entity_tokens]
+      if False == np.all([token in tokens for token in entity_tokens]): continue
       for idx, token in enumerate(entity_tokens):
         tag = e[2]
         ner_tags[tokens.index((token[0], (token[1][0], token[1][1])))] = \
