@@ -77,7 +77,7 @@ python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-case
 
 | model | pretrained checkpoint |
 |-------|-----------------------|
-| Bert  | https://drive.google.com/file/d/1aEMB5jLUwokS77-SeyHzTjRT6h55ndy8/view?usp=drive_link |
+| Bert  | [https://drive.google.com/file/d/1aEMB5jLUwokS77-SeyHzTjRT6h55ndy8/view?usp=drive_link](https://drive.google.com/file/d/1Psi-88vf4vF3gAFNcKjl8CzRnbcEDEQM/view?usp=sharing) |
 
 ## Test model
 
@@ -96,7 +96,7 @@ python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-case
 ## Extract entities from papers
 
 ```shell
-python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|gpu)]
+python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|cuda)]
 ```
 
 ## Visualize extracted entities in Neo4j
