@@ -85,5 +85,7 @@ python3 main.py --model (llama3|qwen2) --input_dir <path/to/directory/of/patents
 ## Export the database in cypher format
 
 ```shell
-bash run_cypher.sh
+bash run_cypher.sh > output.cypher
 ```
+
+the exported all.cypher file is under **/var/lib/neo4j/import/**
