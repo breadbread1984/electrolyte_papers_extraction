@@ -29,7 +29,7 @@ python3 preprocess.py --input_dir <path/to/pdf> [--output_dir <path/to/preproces
 
 ```shell
 bash convert.sh <path/to/spacy/annotation/file> output
-cat output/*.jsonl <path/to/dataset.jsonl>
+cat output/*.jsonl > <path/to/dataset.jsonl>
 ```
 
 convert adaseq format dataset to huggingface format dataset
