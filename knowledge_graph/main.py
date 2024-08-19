@@ -55,8 +55,11 @@ def main(unused_argv):
       else:
         raise Exception('unknown format!')
       docs = loader.load()
-      graph = graph_transformer.convert_to_graph_documents(docs)
-      neo4j.add_graph_documents(graph)
+      try:
+        graph = graph_transformer.convert_to_graph_documents(docs)
+        neo4j.add_graph_documents(graph)
+      except:
+        print('%s has text over context length of LLM! skip this document.')
 
 if __name__ == "__main__":
   add_options()
