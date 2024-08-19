@@ -82,3 +82,8 @@ result = self.database.run(sql_cmd)
 python3 main.py --model (llama3|qwen2) --input_dir <path/to/directory/of/patents> [--host <host>] [--user <user>] [--password <password>] [--database <database>] [--locally]
 ```
 
+## Export the database in cypher format
+
+```shell
+bash run_cypher.sh
+```
