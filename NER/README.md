@@ -65,10 +65,6 @@ to
     ]
 ```
 
-| model | pretrained checkpoint |
-|-------|-----------------------|
-| Bert+CRF | https://drive.google.com/file/d/18er_dsBq-u9u2zSb01zh-AHICEyEMv-O/view?usp=drive_link |
-
 ### Train Bert with Huggingface
 
 ```shell
