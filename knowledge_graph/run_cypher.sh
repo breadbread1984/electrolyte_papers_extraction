@@ -5,5 +5,5 @@ USERNAME="neo4j"
 PASSWORD="neo4j"
 DATABASE="neo4j"
 
-cat export.cypher | cypher-shell -a "$HOST" -u "$USERNAME" -p "$PASSWORD" -d "$DATABASE"
+cat output.cypher | cypher-shell -a "$HOST" -u "$USERNAME" -p "$PASSWORD" -d "$DATABASE"
 
