@@ -21,7 +21,7 @@ def main(unused_argv):
   if exists(FLAGS.output_dir): rmtree(FLAGS.output_dir)
   mkdir(FLAGS.output_dir)
   ner = TripletExtractor(FLAGS.ckpt, framework = FLAGS.framework, device = FLAGS.device)
-  for root, dirs, file in tqdm(walk(FLAGS.input_dir)):
+  for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
       stem, ext = splitext(f)
       if ext != '.pdf': continue
