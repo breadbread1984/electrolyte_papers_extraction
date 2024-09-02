@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import re
 from os.path import abspath, splitext, basename
 import modelscope
 import transformers
@@ -63,6 +64,29 @@ class PDFNER(NER):
       entities = super(PDFNER,self).process(sentence)
       sentence_metadata['entities'] = entities
       metadata['sentences'].append(sentence_metadata)
+    return metadata
+
+class TripletExtractor(NER):
+  def __init__(self, ckpt, framework = 'huggingface', device = 'gpu'):
+    super(TripletExtractor, self).__init__(ckpt, framework, device)
+  def process(self, pdf):
+    metadata = dict()
+    stem, ext = splitext(basename(pdf))
+    metadata['filename'] = stem
+    metadata['triplets'] = list()
+    if ext != '.pdf': raise Exception('it is not a pdf file!')
+    loader = UnstructuredPDFLoader(pdf, mode = 'single')
+    docs = loader.load()
+    text = ' '.join([doc.page_content for doc in docs])
+    sentences = re.split(r'(\s+[\.,!?]|[\.,!?]\s+)', text)
+    for sentence in sentences:
+      entities = super(TripletExtractor, self).process(sentence)
+    electrolytes = [entity for entity in entities if entity['entity'] == 'SULFIDE_ELECTROLYTE']
+    if len(electrolytes) != 1: continue
+    electrolyte = electrolytes[0]
+    attributes = [entity for entity in entities if entity['entity'] != 'SULFIDE_ELECTROLYTE']
+    for attribute in attributes:
+      metadata['triplets'].append((electrolyte, attribute))
     return metadata
 
 if __name__ == "__main__":
