@@ -12,7 +12,7 @@ FLAGS = flags.FLAGS
 
 def add_options():
   flags.DEFINE_string('input_dir', default = None, help = 'path to directory containing pdfs')
-  flags.DEFINE_string('output_dir', default = 'output', help = 'path to output directory')
+  flags.DEFINE_string('output_dir', default = 'entity_output', help = 'path to output directory')
   flags.DEFINE_string('ckpt', default = None, help = 'path to checkpoint')
   flags.DEFINE_enum('framework', default = 'huggingface', enum_values = {'huggingface', 'adaseq'}, help = 'which framework is used')
   flags.DEFINE_enum('device', default = 'cuda', enum_values = {'cuda', 'cpu'}, help = 'device')

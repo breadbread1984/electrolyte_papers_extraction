@@ -96,7 +96,7 @@ python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-case
 ## Extract entities from papers
 
 ```shell
-python3 main.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|cuda)]
+python3 extract_entities.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|cuda)]
 ```
 
 ## Visualize extracted entities in Neo4j
