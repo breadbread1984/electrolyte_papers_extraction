@@ -10,7 +10,7 @@ FLAGS = flags.FLAGS
 
 def add_options():
   flags.DEFINE_string('input_dir', default = None, help = 'path to input directory')
-  flags.DEFINE_string('output', default = 'attribute_output.cypher', help = 'output cypher file')
+  flags.DEFINE_string('output', default = 'triplet_output.cypher', help = 'output cypher file')
 
 def add_triplet(electrolyte, value, tag, filename):
   cypher = """merge (a: SULFIDE_ELECTROLYTE {name: \"%s\"}) return a;

@@ -10,7 +10,7 @@ FLAGS = flags.FLAGS
 
 def add_options():
   flags.DEFINE_string('input_dir', default = None, help = 'path to input directory')
-  flags.DEFINE_string('output', default = 'output.cypher', help = 'output cypher file')
+  flags.DEFINE_string('output', default = 'entity_output.cypher', help = 'output cypher file')
   flags.DEFINE_list('labels', default = ["SULFIDE_ELECTROLYTE","IONIC_CONDUCTIVITY","CURRENT_DENSITY","ENERGY_DENSITY","STRUCTURE"], help = 'concerned labels')
 
 def add_label(label):

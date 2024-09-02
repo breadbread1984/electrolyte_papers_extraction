@@ -105,7 +105,7 @@ python3 extract_entities.py --input_dir <path/to/directory/of/pdfs> [--output <p
 
 ```shell
 python3 create_entity_web.py --input_dir <path/to/directory/of/jsons>
-bash run_cypher.sh
+bash run_cypher.sh entity_output.cypher
 ```
 
 ## Extract triplets
@@ -117,3 +117,8 @@ python3 extract_triplets.py --input_dir <path/to/directory/of/pdfs> [--output <p
 ```
 
 ### Visualize extracted triplets in Neo4j
+
+```shell
+python3 create_triplet_web.py --input_dir <path/to/directory/of/jsons>
+bash run_cypher.sh triplet_output.cypher
+```
