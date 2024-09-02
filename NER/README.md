@@ -112,4 +112,8 @@ bash run_cypher.sh
 
 ### Extract triplets from papers
 
+```shell
+python3 extract_triplets.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] -- ckpt <ckpt> --framework (huggingface) [--device (cpu|cuda)]
+```
+
 ### Visualize extracted triplets in Neo4j
