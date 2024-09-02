@@ -81,12 +81,12 @@ class TripletExtractor(NER):
     sentences = re.split(r'(\s+[\.,!?]|[\.,!?]\s+)', text)
     for sentence in sentences:
       entities = super(TripletExtractor, self).process(sentence)
-    electrolytes = [entity for entity in entities if entity['entity'] == 'SULFIDE_ELECTROLYTE']
-    if len(electrolytes) != 1: continue
-    electrolyte = electrolytes[0]
-    attributes = [entity for entity in entities if entity['entity'] != 'SULFIDE_ELECTROLYTE']
-    for attribute in attributes:
-      metadata['triplets'].append((electrolyte, attribute))
+      electrolytes = [entity for entity in entities if entity['entity'] == 'SULFIDE_ELECTROLYTE']
+      if len(electrolytes) != 1: continue
+      electrolyte = electrolytes[0]
+      attributes = [entity for entity in entities if entity['entity'] != 'SULFIDE_ELECTROLYTE']
+      for attribute in attributes:
+        metadata['triplets'].append((electrolyte, attribute))
     return metadata
 
 if __name__ == "__main__":
