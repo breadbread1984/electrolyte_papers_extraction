@@ -93,16 +93,23 @@ adaseq test -ckpt ckpt/ner/<checkpoint>/best_model -w ckpt/ner/<checkpoint>
 python3 train_huggingface_ner.py --model_name_or_path google-bert/bert-base-cased --validation_file <path/to/valset.json> --output_dir <path/to/ckpt> --do_eval --overwrite_output_dir
 ```
 
-## Extract entities from papers
+## Extract entities
+
+### Extract entities from papers
 
 ```shell
 python3 extract_entities.py --input_dir <path/to/directory/of/pdfs> [--output <path/to/output/directory>] --ckpt <ckpt> --framework (huggingface|adaseq) [--device (cpu|cuda)]
 ```
 
-## Visualize extracted entities in Neo4j
+### Visualize extracted entities in Neo4j
 
 ```shell
-python3 create_value_web.py --input_dir <path/to/directory/of/jsons>
+python3 create_entity_web.py --input_dir <path/to/directory/of/jsons>
 bash run_cypher.sh
 ```
 
+## Extract triplets
+
+### Extract triplets from papers
+
+### Visualize extracted triplets in Neo4j
