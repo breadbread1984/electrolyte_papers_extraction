@@ -242,6 +242,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "80Li2S 20P2S5"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "80Li2S 20P2S5"}), (b: IONIC_CONDUCTIVITY {value: "cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2413-Development of 4V-Class Bulk-Type All-Solid-State Lithium Rechargeable Batteries by a Combined Use of Complex Hydride and Sulfide Electrolytes for Room Temperature Operation";
+merge (a: SULFIDE_ELECTROLYTE {name: "107*"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.8x"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "107*"}), (b: IONIC_CONDUCTIVITY {value: "1.8x"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US20240055650A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "H2"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1.2 × 10−2 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "H2"}), (b: IONIC_CONDUCTIVITY {value: "1.2 × 10−2 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -262,6 +266,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "10−6–10−4 S/cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}), (b: IONIC_CONDUCTIVITY {value: "10−6–10−4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1681-Size control of sulfide-based solid electrolyte particles through liquid-phase synthesis";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}), (b: IONIC_CONDUCTIVITY {value: "S"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US11817569B2";
 merge (a: SULFIDE_ELECTROLYTE {name: "R"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "231"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "R"}), (b: IONIC_CONDUCTIVITY {value: "231"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1126,6 +1134,26 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Br"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1.9 mS cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Br"}), (b: IONIC_CONDUCTIVITY {value: "1.9 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2203-Quantitative analysis of crystallinity in an argyrodite sulfide-based solid electrolyte synthesized via solution processing";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}), (b: IONIC_CONDUCTIVITY {value: "S"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US12021187B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "58"}) return a;
+merge (a: ENERGY_DENSITY {value: "mA"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "58"}), (b: ENERGY_DENSITY {value: "mA"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023162531A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "58"}) return a;
+merge (a: CURRENT_DENSITY {value: "c"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "58"}), (b: CURRENT_DENSITY {value: "c"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023162531A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "58"}) return a;
+merge (a: ENERGY_DENSITY {value: "m"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "58"}), (b: ENERGY_DENSITY {value: "m"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023162531A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "58"}) return a;
+merge (a: CURRENT_DENSITY {value: "-2"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "58"}), (b: CURRENT_DENSITY {value: "-2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023162531A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li9.53Si1.74P1.44S11.7Cl0.3"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "5–10 mS cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li9.53Si1.74P1.44S11.7Cl0.3"}), (b: IONIC_CONDUCTIVITY {value: "5–10 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1402,6 +1430,50 @@ merge (a: SULFIDE_ELECTROLYTE {name: "LiNi0.8Co0.1Mn0.1O2"}) return a;
 merge (a: STRUCTURE {value: "he"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LiNi0.8Co0.1Mn0.1O2"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2031-Visualizing the Chemical Incompatibility of Halide and Sulfide-Based Electrolytes in Solid-State Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "NasPS3.sClo.2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1 mS/"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "NasPS3.sClo.2"}), (b: IONIC_CONDUCTIVITY {value: "1 mS/"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "NasPS3.sClo.2"}) return a;
+merge (a: CURRENT_DENSITY {value: "cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "NasPS3.sClo.2"}), (b: CURRENT_DENSITY {value: "cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "t-Na3-yPS4-xClx"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.3 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "t-Na3-yPS4-xClx"}), (b: IONIC_CONDUCTIVITY {value: "0.3 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na"}), (b: IONIC_CONDUCTIVITY {value: "2 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}) return a;
+merge (a: STRUCTURE {value: "te"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na2.957sPS3.9375Clo.0625"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1x 10+ S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na2.957sPS3.9375Clo.0625"}), (b: IONIC_CONDUCTIVITY {value: "1x 10+ S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "xLisPS4-(1-x)Lil"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "6.4 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "xLisPS4-(1-x)Lil"}), (b: IONIC_CONDUCTIVITY {value: "6.4 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.28 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}), (b: IONIC_CONDUCTIVITY {value: "0.28 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.94 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}), (b: IONIC_CONDUCTIVITY {value: "0.94 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7P2SsI"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.14 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7P2SsI"}), (b: IONIC_CONDUCTIVITY {value: "0.14 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Lis"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.1 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Lis"}), (b: IONIC_CONDUCTIVITY {value: "2.1 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019195644A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li8P2S"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "2"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li8P2S"}), (b: IONIC_CONDUCTIVITY {value: "2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1614,6 +1686,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}) return a;
 merge (a: STRUCTURE {value: "he"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2134-Current Status and Future Directions in Environmental Stability of Sulfide Solid-State Electrolytes for All-Solid-State Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "-2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2X10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "-2"}), (b: IONIC_CONDUCTIVITY {value: "2X10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2020022342A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "-2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "-2"}), (b: IONIC_CONDUCTIVITY {value: "S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2020022342A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
 merge (a: CURRENT_DENSITY {value: "0.17 mA cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: CURRENT_DENSITY {value: "0.17 mA cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1630,6 +1710,46 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Cl"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "2.1 mS/cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Cl"}), (b: IONIC_CONDUCTIVITY {value: "2.1 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2241-Fusion Bonding Technique for Solvent-Free Fabrication of All-Solid-State Battery with Ultrathin Sulfide Electrolyte";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7P3Si1"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7P3Si1"}), (b: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.5 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "1.5 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.05 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "1.05 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1x10 to 1x10 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "1x10 to 1x10 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2x 10-7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "2x 10-7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}), (b: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.05 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}), (b: IONIC_CONDUCTIVITY {value: "1.05 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Liz"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Liz"}), (b: IONIC_CONDUCTIVITY {value: "0.7 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022159588A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Fe"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "105 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Fe"}), (b: IONIC_CONDUCTIVITY {value: "105 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1750,6 +1870,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}) return a;
 merge (a: STRUCTURE {value: "he"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2290-Optimization on transport of charge carriers in cathode of sulfide electrolyte-based solid-state lithium-sulfur batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "12 mS/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}), (b: IONIC_CONDUCTIVITY {value: "12 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN489082B";
+merge (a: SULFIDE_ELECTROLYTE {name: "LS"}) return a;
+merge (a: STRUCTURE {value: "te"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LS"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN489082B";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "5.89· 10-4 S cm-1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "5.89· 10-4 S cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -1982,6 +2110,38 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li2CO3"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "11 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li2CO3"}), (b: IONIC_CONDUCTIVITY {value: "11 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1394-Spontaneous gas-solid reaction on sulfide electrolytes for high-performance all-solid-state batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li(7-x)La(3- X)A(x)Z1(2)"}) return a;
+merge (a: STRUCTURE {value: "te"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li(7-x)La(3- X)A(x)Z1(2)"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7La3Z12012"}) return a;
+merge (a: STRUCTURE {value: "te"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7La3Z12012"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "1.2x10"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "-"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "1.2x10"}), (b: IONIC_CONDUCTIVITY {value: "-"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.6x10-* S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "1.6x10-* S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "-+"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "5.36x10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "-+"}), (b: IONIC_CONDUCTIVITY {value: "5.36x10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "-+"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "-+"}), (b: IONIC_CONDUCTIVITY {value: "S"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.6"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "1.6"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
+merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "4.0x10-* S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "4.0x10-* S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US9548512B2";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1.2×10-2 S cm-1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}), (b: IONIC_CONDUCTIVITY {value: "1.2×10-2 S cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -2090,6 +2250,22 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4·4H2O"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "10¹9 S cm¹1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4·4H2O"}), (b: IONIC_CONDUCTIVITY {value: "10¹9 S cm¹1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1437-Influence of Traces of Moisture on a Sulfide Solid Electrolyte Li4SnS4";
+merge (a: SULFIDE_ELECTROLYTE {name: "P2Ss-Na2Ss"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "4.86 x 10*(-2) mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "P2Ss-Na2Ss"}), (b: IONIC_CONDUCTIVITY {value: "4.86 x 10*(-2) mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023086581A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "9.12"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}), (b: IONIC_CONDUCTIVITY {value: "9.12"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023086581A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "x"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}), (b: IONIC_CONDUCTIVITY {value: "x"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023086581A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "10*(-3) mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "P2Ss-NaoS"}), (b: IONIC_CONDUCTIVITY {value: "10*(-3) mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023086581A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "0.14 mS cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "0.14 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -2590,6 +2766,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "30.0 mS cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "30.0 mS cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2387-Li-Ion Cooperative Migration and Oxy-Sulfide Synergistic Effect in Li14P2Ge2S16-6xOx Solid-State-Electrolyte Enables Extraordinary Conductivity and High Stability";
+merge (a: SULFIDE_ELECTROLYTE {name: "MnO2"}) return a;
+merge (a: STRUCTURE {value: "te"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "MnO2"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN526729B";
+merge (a: SULFIDE_ELECTROLYTE {name: "C"}) return a;
+merge (a: STRUCTURE {value: "he"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "C"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN526729B";
 merge (a: SULFIDE_ELECTROLYTE {name: "2"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "g"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "2"}), (b: IONIC_CONDUCTIVITY {value: "g"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -2690,6 +2874,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "C"}) return a;
 merge (a: CURRENT_DENSITY {value: "0.5 mA/cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "C"}), (b: CURRENT_DENSITY {value: "0.5 mA/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2050-ELECTROCHEMICAL-BEHAVIOR OF SOLID CATHODE MATERIALS IN SECONDARY ORGANIC ELECTROLYTE LITHIUM BATTERIES - COPPER SULFIDES";
+merge (a: SULFIDE_ELECTROLYTE {name: "LiNb"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "10-’ S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LiNb"}), (b: IONIC_CONDUCTIVITY {value: "10-’ S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US10938060B2";
 merge (a: SULFIDE_ELECTROLYTE {name: "LiFePO4"}) return a;
 merge (a: CURRENT_DENSITY {value: "25 μA cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LiFePO4"}), (b: CURRENT_DENSITY {value: "25 μA cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -3406,6 +3594,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li5.6Cu0.2PS4.8Br1.2"}) return a;
 merge (a: CURRENT_DENSITY {value: "0.2 mA cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li5.6Cu0.2PS4.8Br1.2"}), (b: CURRENT_DENSITY {value: "0.2 mA cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2403-Enhanced air stability and interfacial compatibility of Li-argyrodite sulfide electrolyte triggered by CuBr co-substitution for all-solid-state lithium batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li5.4PS4.4Cl1.2Br0.4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.12 mS cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li5.4PS4.4Cl1.2Br0.4"}), (b: IONIC_CONDUCTIVITY {value: "2.12 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "CN115425286A";
 merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "5.3 mS/cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "5.3 mS/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -3430,6 +3622,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "6.0 x 10-3 S cm-1 and 1.0 x 10-3 S cm- 1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}), (b: IONIC_CONDUCTIVITY {value: "6.0 x 10-3 S cm-1 and 1.0 x 10-3 S cm- 1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "593-All-solid-state lithium-ion batteries with TiS2 nanosheets and sulphide solid electrolytes";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li2 S GeS2 P 2"}), (b: IONIC_CONDUCTIVITY {value: "S"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US11239495B2";
 merge (a: SULFIDE_ELECTROLYTE {name: "β-Li3PS4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "7.4 × 10−5 S cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "β-Li3PS4"}), (b: IONIC_CONDUCTIVITY {value: "7.4 × 10−5 S cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -3450,6 +3646,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "10−4 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}), (b: IONIC_CONDUCTIVITY {value: "10−4 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1396-Toward Scalable Liquid-Phase Synthesis of Sulfide Solid Electrolytes for All-Solid-State Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li6PS5X"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "10−3 S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li6PS5X"}), (b: IONIC_CONDUCTIVITY {value: "10−3 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "CN117855590A";
+merge (a: SULFIDE_ELECTROLYTE {name: "5.5sas7."}) return a;
+merge (a: CURRENT_DENSITY {value: "0"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "5.5sas7."}), (b: CURRENT_DENSITY {value: "0"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US11355780B2";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1 × 10−2 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "1 × 10−2 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -3574,6 +3778,18 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "10−4 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "10−4 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1403-Sulfide-Based Solid-State Electrolytes  Synthesis, Stability, and Potential for All-Solid-State Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "4.4 x 10° S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}), (b: IONIC_CONDUCTIVITY {value: "4.4 x 10° S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019140368A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: ".9 x 107s cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}), (b: IONIC_CONDUCTIVITY {value: ".9 x 107s cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019140368A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}) return a;
+merge (a: CURRENT_DENSITY {value: "0.1 mA/em"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}), (b: CURRENT_DENSITY {value: "0.1 mA/em"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2019140368A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Na2.4Er0.4Zr0.6Cl6"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "0.04 mS·cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Na2.4Er0.4Zr0.6Cl6"}), (b: IONIC_CONDUCTIVITY {value: "0.04 mS·cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -3978,6 +4194,10 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li2"}) return a;
 merge (a: ENERGY_DENSITY {value: "370.6 Wh kg"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li2"}), (b: ENERGY_DENSITY {value: "370.6 Wh kg"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "210-LithiumSulfide All-Solid-State Batteries using Sulfide Electrolytes";
+merge (a: SULFIDE_ELECTROLYTE {name: "LA"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.2"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LA"}), (b: IONIC_CONDUCTIVITY {value: "1.2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2023100193A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li3.12P0.94Bi0.06S3.91O0.09"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "2.8 mS cm–1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3.12P0.94Bi0.06S3.91O0.09"}), (b: IONIC_CONDUCTIVITY {value: "2.8 mS cm–1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -4434,6 +4654,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}) return a;
 merge (a: STRUCTURE {value: "He"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}), (b: STRUCTURE {value: "He"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2198-Sulfide Electrolyte Suppressing Side Reactions in Composite Positive Electrodes for All-Solid-State Lithium Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "LisPSe4."}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.7 mS/"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LisPSe4."}), (b: IONIC_CONDUCTIVITY {value: "1.7 mS/"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2024051220A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "."}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "6.57 mS/"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "."}), (b: IONIC_CONDUCTIVITY {value: "6.57 mS/"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2024051220A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "(100-x) Li2S-xP2S5"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1 mS cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "(100-x) Li2S-xP2S5"}), (b: IONIC_CONDUCTIVITY {value: "1 mS cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -4750,6 +4978,18 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Na"}) return a;
 merge (a: CURRENT_DENSITY {value: "50 μA cm−2"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Na"}), (b: CURRENT_DENSITY {value: "50 μA cm−2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2103-Optimized Thin Film Processing of Sodium Mixed Oxy-Sulfide-Nitride Glassy Solid Electrolytes for All-Solid-State Batteries";
+merge (a: SULFIDE_ELECTROLYTE {name: "Liz"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "5"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Liz"}), (b: IONIC_CONDUCTIVITY {value: "5"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2017155119A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Liz"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "3"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Liz"}), (b: IONIC_CONDUCTIVITY {value: "3"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2017155119A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Liz"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Liz"}), (b: IONIC_CONDUCTIVITY {value: "S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2017155119A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "1.3 to 0.46 mS cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: IONIC_CONDUCTIVITY {value: "1.3 to 0.46 mS cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -4866,6 +5106,18 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li6-xPS5-xClx"}) return a;
 merge (a: CURRENT_DENSITY {value: "cm-2"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li6-xPS5-xClx"}), (b: CURRENT_DENSITY {value: "cm-2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2283-Preparations and Properties of Low Cost Sulfide Solid Electrolytes Li_(6-x)PS_(5-x)Cl_x";
+merge (a: SULFIDE_ELECTROLYTE {name: "4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "7.4X10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "4"}), (b: IONIC_CONDUCTIVITY {value: "7.4X10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2018096957A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "S cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "4"}), (b: IONIC_CONDUCTIVITY {value: "S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2018096957A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "104S-"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "4.0X"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "104S-"}), (b: IONIC_CONDUCTIVITY {value: "4.0X"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2018096957A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li–Si"}) return a;
 merge (a: CURRENT_DENSITY {value: "5 mA cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li–Si"}), (b: CURRENT_DENSITY {value: "5 mA cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -5054,6 +5306,30 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}) return a;
 merge (a: STRUCTURE {value: "he"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li4SnS4"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2376-Realizing long-cycling all-solid-state Li-InTiS2 batteries using Li6+xMxAs1-xS5I (M=Si, Sn) sulfide solid electrolytes";
+merge (a: SULFIDE_ELECTROLYTE {name: "H"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "1.0 x"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "H"}), (b: IONIC_CONDUCTIVITY {value: "1.0 x"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
+merge (a: SULFIDE_ELECTROLYTE {name: "H"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "10-3 to 1.0 x 10-4 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "H"}), (b: IONIC_CONDUCTIVITY {value: "10-3 to 1.0 x 10-4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.77Si0.82Sb0.18S3.95I0.05"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "3.36 x 10-4 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.77Si0.82Sb0.18S3.95I0.05"}), (b: IONIC_CONDUCTIVITY {value: "3.36 x 10-4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.734Sn0.834As0.166S3.90Cl0.10"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.68 x 10-4 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.734Sn0.834As0.166S3.90Cl0.10"}), (b: IONIC_CONDUCTIVITY {value: "2.68 x 10-4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.734Sn0.834As0.166S3.90Cl0.10"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.61 x 10-4 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.734Sn0.834As0.166S3.90Cl0.10"}), (b: IONIC_CONDUCTIVITY {value: "2.61 x 10-4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.750Ge0.80As0.20S3.95Br0.05"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.91 x 10-4 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.750Ge0.80As0.20S3.95Br0.05"}), (b: IONIC_CONDUCTIVITY {value: "2.91 x 10-4 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "IN398706B";
 merge (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}) return a;
 merge (a: STRUCTURE {value: "te"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Na3PS4"}), (b: STRUCTURE {value: "te"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -5114,6 +5390,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}) return a;
 merge (a: CURRENT_DENSITY {value: "0.13 mA cm-2"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3PS4"}), (b: CURRENT_DENSITY {value: "0.13 mA cm-2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2242-Structural and Electronic-State Changes of a Sulfide Solid Electrolyte during the Li Deinsertion-Insertion Processes";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "9.19-10-5 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li"}), (b: IONIC_CONDUCTIVITY {value: "9.19-10-5 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2018054709A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "LisPS4l"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "3.4 10-5 S/cm"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "LisPS4l"}), (b: IONIC_CONDUCTIVITY {value: "3.4 10-5 S/cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2018054709A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "PS"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "3−"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "PS"}), (b: IONIC_CONDUCTIVITY {value: "3−"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -5174,6 +5458,14 @@ merge (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Cl"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "−8 S cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li6PS5Cl"}), (b: IONIC_CONDUCTIVITY {value: "−8 S cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "2046-Enabling Argyrodite Sulfides as Superb Solid-State Electrolyte with Remarkable Interfacial Stability Against Electrodes";
+merge (a: SULFIDE_ELECTROLYTE {name: "0.30sXs2."}) return a;
+merge (a: CURRENT_DENSITY {value: "10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "0.30sXs2."}), (b: CURRENT_DENSITY {value: "10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US20230178794A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "0.30sXs2."}) return a;
+merge (a: CURRENT_DENSITY {value: "10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "0.30sXs2."}), (b: CURRENT_DENSITY {value: "10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "US20230178794A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "2.2 × 10−3 S cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}), (b: IONIC_CONDUCTIVITY {value: "2.2 × 10−3 S cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -5354,6 +5646,26 @@ merge (a: SULFIDE_ELECTROLYTE {name: "LP"}) return a;
 merge (a: CURRENT_DENSITY {value: "0.3 mA cm"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "LP"}), (b: CURRENT_DENSITY {value: "0.3 mA cm"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1687-Doping effects of metal cation on sulfide solid electrolyte lithium metal interface";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "2.2"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}), (b: IONIC_CONDUCTIVITY {value: "2.2"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022072928A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "mS-cm-1"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}), (b: IONIC_CONDUCTIVITY {value: "mS-cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022072928A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "12 mS:cm-1"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li10GeP2S12"}), (b: IONIC_CONDUCTIVITY {value: "12 mS:cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022072928A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li9.54Si1.74P1.44S11.7Cl0.3"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "25 mS-cm-1"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li9.54Si1.74P1.44S11.7Cl0.3"}), (b: IONIC_CONDUCTIVITY {value: "25 mS-cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022072928A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "17 mS-cm-1"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li7P3S11"}), (b: IONIC_CONDUCTIVITY {value: "17 mS-cm-1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "WO2022072928A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "2.2 × 10−3 S cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "Li3.25Ge0.25P0.75S4"}), (b: IONIC_CONDUCTIVITY {value: "2.2 × 10−3 S cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
@@ -5786,6 +6098,18 @@ merge (a: SULFIDE_ELECTROLYTE {name: "75Li2S·25P2S5"}) return a;
 merge (a: IONIC_CONDUCTIVITY {value: "10−4 S cm−1"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "75Li2S·25P2S5"}), (b: IONIC_CONDUCTIVITY {value: "10−4 S cm−1"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
 set r.source = "1420-Mechanical Properties of Sulfide-Type Solid Electrolytes Analyzed by Indentation Methods";
+merge (a: SULFIDE_ELECTROLYTE {name: "Li5.5PS4.5Cl0.8Br0.69I0.01"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "10"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "Li5.5PS4.5Cl0.8Br0.69I0.01"}), (b: IONIC_CONDUCTIVITY {value: "10"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "CN114852980B";
+merge (a: SULFIDE_ELECTROLYTE {name: "S3P-S- PS3"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "40"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "S3P-S- PS3"}), (b: IONIC_CONDUCTIVITY {value: "40"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "EP2916381A1";
+merge (a: SULFIDE_ELECTROLYTE {name: "S3P-S- PS3"}) return a;
+merge (a: IONIC_CONDUCTIVITY {value: "cm-"}) return a;
+match (a: SULFIDE_ELECTROLYTE {name: "S3P-S- PS3"}), (b: IONIC_CONDUCTIVITY {value: "cm-"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
+set r.source = "EP2916381A1";
 merge (a: SULFIDE_ELECTROLYTE {name: "H2S"}) return a;
 merge (a: STRUCTURE {value: "he"}) return a;
 match (a: SULFIDE_ELECTROLYTE {name: "H2S"}), (b: STRUCTURE {value: "he"}) merge (a)-[r:HAS_ATTRIBUTE]-(b)
