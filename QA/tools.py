@@ -34,7 +34,9 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
   return Tool(config = Config(neo4j = neo4j, db = database, tokenizer = tokenizer, llm = llm))
 
 if __name__ == "__main__":
-  kg = load_knowledge_graph(password = "19841124")
+  from models import Qwen2
+  tokenizer, llm = Qwen2(True)
+  kg = load_knowledge_graph(password = "19841124", tokenizer = tokenizer, llm = llm)
   res = kg.invoke("Li6PS5Cl")
   print(res)
 
