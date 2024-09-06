@@ -22,7 +22,7 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
     name = "electrolyte property query tool"
     description = "you can query ionic conductivity, energy density, current density and crystal structure of an electrolyte with this tool"
     args_schema: Type[BaseModel] = Input
-    return_direct: boll = True
+    return_direct: bool = True
     config: Config
     def _run(self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None) -> str:
       records, summary, keys = config.neo4j.execute_query("match (a: SULFIDE_ELECTROLYTE)-[r]->(b) where a.name = $f return b as attribute", f = query, database_ = config.db)
