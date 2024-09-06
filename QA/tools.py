@@ -26,7 +26,7 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
     config: Config
     def _run(self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None) -> str:
       records, summary, keys = self.config.neo4j.execute_query("match (a: SULFIDE_ELECTROLYTE)-[r]->(b) where a.name = $f return b as attribute", f = query, database_ = self.config.db)
-      attributes = [record['attribute'] for record in records]
+      attributes = [{list(record['attribute'].labels)[0]: record['attribute']['value']} for record in records]
       return str(attributes)
     async def _arun(self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None) -> str:
       raise NotImplementedError("electrolyte property query tool does not support async!")
