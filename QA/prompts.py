@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from langchain import hub
+from langchain.tools.render import render_text_description
 from langchain_core.prompts.prompt import PromptTemplate
 
 def agent_template(tokenizer, tools):
