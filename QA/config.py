@@ -6,4 +6,4 @@ neo4j_pass = "neo4j"
 neo4j_db = "neo4j"
 
 service_host = "0.0.0.0"
-service_port = "8087"
+service_port = 8087
