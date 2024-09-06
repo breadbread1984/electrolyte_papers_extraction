@@ -28,7 +28,7 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
       records, summary, keys = config.neo4j.execute_query("match (a: SULFIDE_ELECTROLYTE)-[r]->(b) where a.name = $f return b as attribute", f = query, database_ = config.db)
       attributes = [record['attribute'] for record in records]
       return str(attributes)
-    async def _arun(self, query: str, run_manager: Optional[CosineAnnealingWarmRestarts] = None) -> str:
+    async def _arun(self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None) -> str:
       raise NotImplementedError("electrolyte property query tool does not support async!")
   neo4j = GraphDatabase.driver(host, auth = (username, password))
   return Tool(config = Config(neo4j = neo4j, db = database, tokenizer = tokenizer, llm = llm))
@@ -36,7 +36,7 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
 if __name__ == "__main__":
   from models import Qwen2
   tokenizer, llm = Qwen2(True)
-  kg = load_knowledge_graph(password = "19841124", tokenizer = tokenizer, llm = llm)
+  kg = load_knowledge_graph(password = "19841124", database = 'triplet', tokenizer = tokenizer, llm = llm)
   res = kg.invoke("Li6PS5Cl")
   print(res)
 
