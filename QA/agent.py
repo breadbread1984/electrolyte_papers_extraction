@@ -16,7 +16,7 @@ class Agent(object):
       'qwen2': Qwen2
     }
     tokenizer, llm = llms_types[model](True)
-    kg_tool = load_knowledge_graph(host = config.neo4j_config, username = config.neo4j_user, password = config.neo4j_pass, database = config.neo4j_db, tokenizer = tokenizer, llm = llm)
+    kg_tool = load_knowledge_graph(host = config.neo4j_host, username = config.neo4j_user, password = config.neo4j_pass, database = config.neo4j_db, tokenizer = tokenizer, llm = llm)
     tools = load_tools(tools, llm = llm, serper_api_key = 'd075ad1b698043747f232ec1f00f18ee0e7e8663') + \
       [kg_tool,]
     prompt = agent_template(tokenizer, tools)
