@@ -19,8 +19,8 @@ def load_knowledge_graph(host = "bolt://localhost:7687", username = "neo4j", pas
     tokenizer: Union[PreTrainedTokenizerFast, CodeLlamaTokenizer]
     llm: LLM
   class Tool(BaseTool):
-    name = "electrolyte property query tool"
-    description = "You can query ionic conductivity, energy density, current density or structure of an electrolyte with this tool. the tool returns a dictionary whose key is the type of attribute and the corresponding value is a specific value of the attribute. this tool may yield multiple values for one attribute. They are corresponding to values of the attribute in different conditions."
+    name: str = "electrolyte property query tool"
+    description: str = "You can query ionic conductivity, energy density, current density or structure of an electrolyte with this tool. the tool returns a dictionary whose key is the type of attribute and the corresponding value is a specific value of the attribute. this tool may yield multiple values for one attribute. They are corresponding to values of the attribute in different conditions."
     args_schema: Type[BaseModel] = Input
     return_direct: bool = True
     config: Config
