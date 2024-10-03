@@ -4,7 +4,7 @@ from typing import Optional, Type, List, Dict, Union, Any
 from neo4j import GraphDatabase, BoltDriver
 from transformers import AutoTokenizer, PreTrainedTokenizerFast, CodeLlamaTokenizer
 from langchain.llms.base import LLM
-from langchain.pydantic_v1 import BaseModel, Field
+from langchain.pydantic import BaseModel, Field
 from langchain.tools import BaseTool, StructuredTool, Tool, tool
 from langchain.callbacks.manager import AsyncCallbackManagerForToolRun, CallbackManagerForToolRun
 
