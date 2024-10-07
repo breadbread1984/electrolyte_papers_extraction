@@ -11,15 +11,19 @@ def extract_triplets(tree):
     for subtree in tree:
         if type(subtree) is str:
             return triplets
+        # find object, predicate, subject in this subtree
         if subtree.label() == 'NounPhrase' and not subject:
+            # generate object from noun phrase
             subject = ' '.join(subtree.leaves())
         elif subtree.label() == 'VerbPhrase':
+            # generate predicate and subject from verb phrase
             for vp_subtree in subtree:
                 if type(vp_subtree) is str: continue
                 if vp_subtree.label().startswith('V'):
                     predicate = ' '.join(vp_subtree.leaves())
                 elif vp_subtree.label() in ['NounPhrase', 'PrepPhrase']:
                     obj = ' '.join(vp_subtree.leaves())
+        # if this is a non-terminal node, recursively generate triplets among its children
         if len(subtree) > 0:
             triplets.extend(extract_triplets(subtree))
     if subject and predicate and obj:
