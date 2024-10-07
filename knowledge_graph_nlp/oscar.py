@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
+from os import remove
 from os.path import exists
 import jpype
 import jpype.imports
 from jpype.types import *
 from wget import download
+import tempfile
+import xml.etree.ElementTree as ET
+from nltk.tree import Tree
 
 class Oscar4(object):
   def __init__(self, ):
@@ -58,25 +62,26 @@ class Oscar4(object):
         print(structure)
       '''
     return results
-  def xml_to_nltk_tree(self, xml_node):  
-    # 获取节点的标签和子节点  
-    label = xml_node.get('label')  
-    children = [self.xml_to_nltk_tree(child) for child in xml_node]  
-      
-    # 如果节点有子节点，则创建一个Tree对象；否则，创建一个表示叶子节点的字符串  
-    if children:  
-        return Tree(label, children)  
-    else:  
-        # 这里我们假设叶子节点是文本内容，你可能需要根据实际情况进行调整  
-        return xml_node.text.strip() if xml_node.text else '' 
-  def parse(self, text, output = "parse_result.xml"):
+  def xml_to_nltk_tree(self, element):
+    children = list(element)
+    if not children:
+        # No children, return a leaf node
+        return element.tag
+    # Return a Tree with the element's tag and its children
+    return Tree(element.tag, [self.xml_to_nltk_tree(child) for child in children])
+  def parse(self, text):
     text = self.String(text)
     posContainer = self.ChemistryPOSTagger.getDefaultInstance().runTaggers(text)
     chemistrySentenceParser = self.ChemistrySentenceParser(posContainer)
     chemistrySentenceParser.parseTags()
     doc = chemistrySentenceParser.makeXMLDocument()
-    self.Utils.writeXMLToFile(doc, output)
-    return output
+    with tempfile.NamedTemporaryFile(delete = False, mode = 'w+', encoding = 'utf-8') as tmpfile:
+      self.Utils.writeXMLToFile(doc, tmpfile.name)
+      tmpfile_name = tmpfile.name
+    root = ET.parse(tmpfile_name).getroot()
+    tree = self.xml_to_nltk_tree(root)
+    remove(tmpfile_name)
+    return tree
 
 if __name__ == "__main__":
   oscar = Oscar4()
