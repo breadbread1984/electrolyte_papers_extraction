@@ -10,7 +10,8 @@ def extract_triplets(tree):
     
     for subtree in tree:
         if type(subtree) is str:
-            return triplets
+            # skip terminal node
+            continue
         # find object, predicate, subject in this subtree
         if subtree.label() == 'NounPhrase' and not subject:
             # generate object from noun phrase
@@ -22,6 +23,7 @@ def extract_triplets(tree):
                 if vp_subtree.label().startswith('V'):
                     predicate = ' '.join(vp_subtree.leaves())
                 elif vp_subtree.label() in ['NounPhrase', 'PrepPhrase']:
+                    # both noun phrase and preposition phrase can be subject
                     obj = ' '.join(vp_subtree.leaves())
         # if this is a non-terminal node, recursively generate triplets among its children
         if len(subtree) > 0:
