@@ -2,6 +2,7 @@ tqdm
 absl-py
 torch
 transformers
+langchain-openai
 langchain-community
 langchain-experimental
 gradio
