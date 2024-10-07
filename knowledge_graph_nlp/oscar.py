@@ -66,7 +66,7 @@ class Oscar4(object):
     children = list(element)
     if not children:
         # No children, return a leaf node
-        return element.tag
+        return Tree(element.tag, [element.text])
     # Return a Tree with the element's tag and its children
     return Tree(element.tag, [self.xml_to_nltk_tree(child) for child in children])
   def parse(self, text):
