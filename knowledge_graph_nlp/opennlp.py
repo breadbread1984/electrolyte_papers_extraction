@@ -10,6 +10,7 @@ from wget import download
 class OpenNLP(object):
   def __init__(self,):
     if not exists('en-token.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-token.bin', out = '.')
+    if not exists('en-sent.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-sent.bin', out = '.')
     if not exists('en-ner-date.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-date.bin', out = '.')
     if not exists('en-ner-location.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-location.bin', out = '.')
     if not exists('en-ner-money.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-money.bin', out = '.')
@@ -24,6 +25,8 @@ class OpenNLP(object):
     self.TokenizerModel = jpype.JClass('opennlp.tools.tokenize.TokenizerModel')
     self.TokenizerME = jpype.JClass('opennlp.tools.tokenize.TokenizerME')
     self.TokenNameFinderModel = jpype.JClass('opennlp.tools.namefind.TokenNameFinderModel')
+    self.SentenceModel = jpype.JClass('opennlp.tools.sentdetect.SentenceModel')
+    self.SentenceDetectorME = jpype.JClass('opennlp.tools.sentdetect.SentenceDetectorME')
     self.NameFinderME = jpype.JClass('opennlp.tools.namefind.NameFinderME')
     self.POSModel = jpype.JClass('opennlp.tools.postag.POSModel')
     self.POSTaggerME = jpype.JClass('opennlp.tools.postag.POSTaggerME')
@@ -32,6 +35,7 @@ class OpenNLP(object):
     self.ParserTool = jpype.JPackage('opennlp.tools.cmdline.parser').ParserTool
     self.StringBuffer = jpype.JClass('java.lang.StringBuffer')
     self.tokenizer = self.TokenizerME(self.TokenizerModel(self.FileInputStream('en-token.bin')))
+    self.sentence_detector = self.SentenceDetectorME(self.SentenceModel(self.FileInputStream('en-sent.bin')))
   def ner(self, text):
     models = {
       'date': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-date.bin'))),
@@ -61,13 +65,14 @@ class OpenNLP(object):
     return tags
   def parse(self, text):
     parser = self.ParserFactory.create(self.ParserModel(self.FileInputStream('en-parser-chunking.bin')))
-    sentence = JString(text)
-    parses = self.ParserTool.parseLine(sentence, parser, 1)
+    sentences = self.sentence_detector.sentDetect(JString(text))
     results = list()
-    for parse in parses:
-      sb = self.StringBuffer()
-      parse.show(sb)
-      results.append(Tree.fromstring(str(sb.toString())))
+    for sentence in sentences:
+      parses = self.ParserTool.parseLine(sentence, parser, 1)
+      for parse in parses:
+        sb = self.StringBuffer()
+        parse.show(sb)
+        results.append(Tree.fromstring(str(sb.toString())))
     return results
   def extract_triplets_from_sentence(self, tree):
     triplets = list()
@@ -103,7 +108,6 @@ class OpenNLP(object):
     triplets_by_sentence = list()
     assert type(tree) is list
     for s in tree:
-      assert s.label() == 'TOP'
       triplets = self.extract_triplets_from_sentence(s)
       triplets_by_sentence.append({'triplets': triplets, 'sentence': ' '.join(s.leaves())})
     return triplets_by_sentence
