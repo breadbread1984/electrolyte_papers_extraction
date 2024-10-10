@@ -29,7 +29,7 @@ def main(unused_argv):
     opennlp = OpenNLP()
   else:
     raise Exception('unknown method!')
-  f = open(FLAGS.out, 'w')
+  f = open(FLAGS.output, 'w')
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
       stem, ext = splitext(f)
