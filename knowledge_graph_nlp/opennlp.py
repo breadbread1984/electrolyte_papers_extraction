@@ -46,23 +46,31 @@ class OpenNLP(object):
       'person': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-person.bin'))),
       'time': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-time.bin'))),
     }
-    tokens = self.tokenizer.tokenize(JString(text))
-    entities = list()
-    for name_type, finder in models.items():
-      names = finder.find(tokens)
-      for name in names:
-        entities.append({
-          'entity': str(tokens[name.getStart()]),
-          'type': str(name.getType()),
-          'start': int(name.getStart()),
-          'end': int(name.getEnd())
-        })
-    return entities
+    sentences = self.sentence_detector.sentDetect(JString(text))
+    results = list()
+    for sentence in sentences:
+      tokens = self.tokenizer.tokenize(sentence)
+      entities = list()
+      for name_type, finder in models.items():
+        names = finder.find(tokens)
+        for name in names:
+          entities.append({
+            'entity': str(tokens[name.getStart()]),
+            'type': str(name.getType()),
+            'start': int(name.getStart()),
+            'end': int(name.getEnd())
+          })
+      results.append({'entities': entities, 'original sentence': str(sentence)})
+    return results
   def pos(self, text):
+    sentences = self.sentence_detector.sentDetect(JString(text))
     tagger = self.POSTaggerME(self.POSModel(self.FileInputStream('en-pos-maxent.bin')))
-    tokens = self.tokenizer.tokenize(JString(text))
-    tags = [str(tag) for tag in tagger.tag(tokens)]
-    return tags
+    results = list()
+    for sentence in sentences:
+      tokens = self.tokenizer.tokenize(sentence)
+      tags = [str(tag) for tag in tagger.tag(tokens)]
+      results.append({'tags': tags, 'original sentence': str(sentence)})
+    return results
   def parse(self, text):
     parser = self.ParserFactory.create(self.ParserModel(self.FileInputStream('en-parser-chunking.bin')))
     sentences = self.sentence_detector.sentDetect(JString(text))
