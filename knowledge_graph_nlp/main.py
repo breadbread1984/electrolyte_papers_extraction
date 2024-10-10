@@ -44,7 +44,7 @@ def main(unused_argv):
       else:
         raise Exception('unknown format!')
       text = ' '.join([doc.page_content for doc in loader.load()])
-      if FLAGS.mthod == 'oscar':
+      if FLAGS.method == 'oscar':
         tree = oscar.parse(text)
         triplets = oscar.triplets(tree)
       elif FLAGS.method == 'opennlp':
