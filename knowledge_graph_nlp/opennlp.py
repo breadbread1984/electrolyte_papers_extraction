@@ -1,60 +1,121 @@
 #!/usr/bin/python3
 
 from os.path import join, exists
-import pexpect
+import jpype
+import jpype.imports
+from jpype.types import *
 from nltk.tree import Tree
-from urllib.parse import urlparse
 from wget import download
 
 class OpenNLP(object):
-  def __init__(self, task = 'POSTagger'):
-    self.tasks = {
-      'LanguageDetector': 'https://dlcdn.apache.org/opennlp/models/langdetect/1.8.3/langdetect-183.bin',
-      'SentenceDetector': 'https://dlcdn.apache.org/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-sentence-1.0-1.9.3.bin',
-      'POSTagger': 'https://dlcdn.apache.org/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-pos-1.0-1.9.3.bin',
-      'TokenizerME': 'https://dlcdn.apache.org/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin',
-      'Parser': 'https://opennlp.sourceforge.net/models-1.5/en-parser-chunking.bin',
+  def __init__(self,):
+    if not exists('en-token.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-token.bin', out = '.')
+    if not exists('en-ner-date.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-date.bin', out = '.')
+    if not exists('en-ner-location.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-location.bin', out = '.')
+    if not exists('en-ner-money.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-money.bin', out = '.')
+    if not exists('en-ner-organization.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-organization.bin', out = '.')
+    if not exists('en-ner-percentage.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-percentage.bin', out = '.')
+    if not exists('en-ner-person.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-person.bin', out = '.')
+    if not exists('en-ner-time.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-ner-time.bin', out = '.')
+    if not exists('en-pos-maxent.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-pos-maxent.bin', out = '.')
+    if not exists('en-parser-chunking.bin'): download('https://opennlp.sourceforge.net/models-1.5/en-parser-chunking.bin', out = '.')
+    jpype.startJVM(classpath = ['/usr/share/java/org.jpype-1.3.0.jar','/usr/share/java/opennlp-tools.jar'])
+    self.FileInputStream = jpype.JClass('java.io.FileInputStream')
+    self.TokenizerModel = jpype.JClass('opennlp.tools.tokenize.TokenizerModel')
+    self.TokenizerME = jpype.JClass('opennlp.tools.tokenize.TokenizerME')
+    self.TokenNameFinderModel = jpype.JClass('opennlp.tools.namefind.TokenNameFinderModel')
+    self.NameFinderME = jpype.JClass('opennlp.tools.namefind.NameFinderME')
+    self.POSModel = jpype.JClass('opennlp.tools.postag.POSModel')
+    self.POSTaggerME = jpype.JClass('opennlp.tools.postag.POSTaggerME')
+    self.ParserModel = jpype.JClass('opennlp.tools.parser.ParserModel')
+    self.ParserFactory = jpype.JPackage('opennlp.tools.parser').ParserFactory
+    self.ParserTool = jpype.JPackage('opennlp.tools.cmdline.parser').ParserTool
+    self.StringBuffer = jpype.JClass('java.lang.StringBuffer')
+    self.tokenizer = self.TokenizerME(self.TokenizerModel(self.FileInputStream('en-token.bin')))
+  def ner(self, text):
+    models = {
+      'date': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-date.bin'))),
+      'location': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-location.bin'))),
+      'money': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-money.bin'))),
+      'organization': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-organization.bin'))),
+      'percentage': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-percentage.bin'))),
+      'person': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-person.bin'))),
+      'time': self.NameFinderME(self.TokenNameFinderModel(self.FileInputStream('en-ner-time.bin'))),
     }
-    model_url = self.tasks[task]
-    model_file = urlparse(model_url).path.split('/')[-1]
-    if not exists(model_file): download(model_url, out = '.')
-    self.process = pexpect.spawn(f"{join('/','bin','opennlp')} {task} {model_file}")
-    self.process.setecho(False)
-    self.process.expect('done')
-    self.process.expect('\r\n')
-    self.task = task
-  def call(self, text):
-    try:
-      self.process.read_nonblocking(2048, 0)
-    except:
-      pass
-    self.process.sendline(text)
-    self.process.waitnoecho()
-    timeout = 5 + len(text) / 20.0
-    self.process.expect('\r\n', timeout)
-    results = self.process.before.decode()
-    if self.task == 'POSTagger':
-      parts = list()
-      for token_with_part in results.split(' '):
-        pos = token_with_part.rfind('_')
-        content, part = token_with_part[:pos], token_with_part[pos+1:]
-        parts.append((content, part))
-      return parts
-    elif self.task == 'TokenizerME':
-      tokens = results.split(' ')
-      return tokens
-    elif self.task == 'Parser':
-      tree = Tree.fromstring(results)
-      return tree
+    tokens = self.tokenizer.tokenize(JString(text))
+    entities = list()
+    for name_type, finder in models.items():
+      names = finder.find(tokens)
+      for name in names:
+        entities.append({
+          'entity': str(tokens[name.getStart()]),
+          'type': str(name.getType()),
+          'start': int(name.getStart()),
+          'end': int(name.getEnd())
+        })
+    return entities
+  def pos(self, text):
+    tagger = self.POSTaggerME(self.POSModel(self.FileInputStream('en-pos-maxent.bin')))
+    tokens = self.tokenizer.tokenize(JString(text))
+    tags = [str(tag) for tag in tagger.tag(tokens)]
+    return tags
+  def parse(self, text):
+    parser = self.ParserFactory.create(self.ParserModel(self.FileInputStream('en-parser-chunking.bin')))
+    sentence = JString(text)
+    parses = self.ParserTool.parseLine(sentence, parser, 1)
+    results = list()
+    for parse in parses:
+      sb = self.StringBuffer()
+      parse.show(sb)
+      results.append(Tree.fromstring(str(sb.toString())))
     return results
+  def extract_triplets_from_sentence(self, tree):
+    triplets = list()
+    subject = None
+    predicate = None
+    obj = None
+    
+    for subtree in tree:
+        if type(subtree) is str:
+            # skip terminal node
+            continue
+        # find object, predicate, subject in this subtree
+        if subtree.label() == 'NP' and not subject:
+            # generate object from noun phrase
+            subject = ' '.join(subtree.leaves())
+        elif subtree.label() == 'VP':
+            # generate predicate and subject from verb phrase
+            for vp_subtree in subtree:
+                if type(vp_subtree) is str: continue
+                if vp_subtree.label().startswith('V'):
+                    predicate = ' '.join(vp_subtree.leaves())
+                elif vp_subtree.label() in ['NP', 'PP']:
+                    # both noun phrase and preposition phrase can be subject
+                    obj = ' '.join(vp_subtree.leaves())
+        # if this is a non-terminal node, recursively generate triplets among its children
+        if len(subtree) > 0:
+            triplets.extend(self.extract_triplets_from_sentence(subtree))
+    if subject and predicate and obj:
+        triplets.append((subject, predicate, obj))
+    
+    return triplets
+  def triplets(self, tree):
+    triplets_by_sentence = list()
+    assert type(tree) is list
+    for s in tree:
+      assert s.label() == 'TOP'
+      triplets = self.extract_triplets_from_sentence(s)
+      triplets_by_sentence.append({'triplets': triplets, 'sentence': ' '.join(s.leaves())})
+    return triplets_by_sentence
 
 if __name__ == "__main__":
-  opennlp = OpenNLP('POSTagger')
-  res = opennlp.call('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
+  opennlp = OpenNLP()
+  res = opennlp.ner('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
   print(res)
-  opennlp = OpenNLP('TokenizerME')
-  res = opennlp.call('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
+  res = opennlp.pos('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
   print(res)
-  opennlp = OpenNLP('Parser')
-  res = opennlp.call('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
+  res = opennlp.parse('Figure 5. Kinetic characteristic tests of chemical reaction between Li1–xCoO2(x= 0, 0.3, 0.5) and typical sulfide SEs. (a) DSC curves of the Li1–xCoO2+ Li6PS5Cl mixed powder at different heating rates (3, 5, 7, 15, 20 °C/min).')
+  for tree in res:
+    print(tree)
+  res = opennlp.triplets(res)
   print(res)
