@@ -29,6 +29,7 @@ def main(unused_argv):
     opennlp = OpenNLP()
   else:
     raise Exception('unknown method!')
+  f = open(FLAGS.out, 'w')
   for root, dirs, files in tqdm(walk(FLAGS.input_dir)):
     for f in files:
       stem, ext = splitext(f)
@@ -53,7 +54,12 @@ def main(unused_argv):
         triplets = corenlp.triplets(text)
       else:
         raise Exception('unknown method!')
-
+      for sentence in triplets:
+        for triplet in sentence:
+          f.write("merge (a: Entity {text: \"%s\"}) return a;\n" % triplet[0])
+          f.write("merge (a: Entity {text: \"%s\"}) return a;\n" % triplet[2])
+          f.write("match (a: Entity {text: \"%s\"}), (b: Entity {text: \"%s\"}) merge (a)-[r:RELATION]->(b) set r.text = \"%s\";\n" % (triplet[0], triplet[2], triplet[1]))
+  f.close()
 
 if __name__ == "__main__":
   add_options()
